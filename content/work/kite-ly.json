@@ -4,7 +4,7 @@
   "cover": "/images/uploads/kite-screen-cover.png",
   "year": 2018,
   "body": "My adventure with Kite.ly started in 2017. For almost a year I heave helped to create the best experience for personalising merchandise on the market. This white-label solution drives thousands of online shops around the world.",
-  "layout": "is-half",
+  "layout": false,
   "mockups": {
     "mockup1": "/images/uploads/kite-screen-1.png",
     "mockup2": "/images/uploads/kite-screen-3.png"
