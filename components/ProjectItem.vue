@@ -3,7 +3,7 @@
         <figure class="mockup">
             <!-- Sqaure -->
             <!-- <img src="screen.png" alt=""> -->
-             <v-lazy-image src="screen.png" />
+             <img src="screen.png" />
         </figure>
         <div class="caption">
             <!-- Free -->

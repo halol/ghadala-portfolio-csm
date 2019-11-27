@@ -12,9 +12,9 @@
                     <div class="artwork" v-for="art in getArt" v-bind:key="art.slug">
                         <!-- <img v-bind:src="art.art_image" alt="art.title"> -->
                         
-                        <v-lazy-image v-bind:src="art.art_image" />
+                        <img v-bind:src="art.art_image" />
                         <div class="art-info">
-                            <p class="title">{{art.title}}, {{year}}</p>
+                            <p class="title">{{art.title}}, {{art.year}}</p>
                             <p class="medium">{{art.medium}}</p>
                         </div>
                     </div>
@@ -47,6 +47,7 @@ export default {
     //height: auto;
     display: flex;
     flex-direction: row;
+    margin-bottom: 4em;
     img {
         max-width:60%;
     }

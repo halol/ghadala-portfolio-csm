@@ -9,8 +9,21 @@
 
         <div class="column is-two-thirds">
             <div class="columns is-multiline">
-                <div class="column is-half" v-for="n in 4" v-bind:key="n" v-bind:number="n">
-                    <ProjectItem />
+                <div class="column is-half" v-for="work in allWork" v-bind:key="work.slug">
+                    <n-link :to="work._path">
+                        <div class="project-item">
+                            <figure class="mockup">
+                                <!-- Sqaure -->
+                                <!-- <img src="screen.png" alt=""> -->
+                                <img src="screen.png" />
+                            </figure>
+                            <div class="caption">
+                                <!-- Free -->
+                                <p class="title">{{work.project_name}}</p>
+                                <p class="description">{{work.description}}</p>
+                            </div>
+                        </div>
+                    </n-link>
                 </div>
             </div>
         </div>
