@@ -3,6 +3,7 @@
   "description": "Redesign proposal.",
   "cover": "/images/uploads/cambridge_1_1130.png",
   "year": 2013,
+  "body": "Some text",
   "layout": true,
   "mockups": {
     "mockup1": "/images/uploads/cambridge_2_1130.png",
