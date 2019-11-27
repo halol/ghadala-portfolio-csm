@@ -1,11 +1,12 @@
-$column-gap: 2em;
+@import "variables.scss";
+
 $fix: $column-gap * 2;
 .columns {
     display: flex;
     margin-left: $column-gap * -1;
     margin-right: $column-gap * -1;
     .column {
-        padding: $column-gap;
+        padding: 0 $column-gap;
         display: block;
         flex-basis: 0;
         flex-grow: 1;

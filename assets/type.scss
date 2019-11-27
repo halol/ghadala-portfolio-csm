@@ -1,14 +1,24 @@
-
+@import "variables.scss";
 
 html {font-size: 17px;}
 
-p {margin-bottom: 1.25em;}
+p {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 17px;
+  line-height: 150%;
+  color: $grey;
+  margin-bottom: 1.25em;
+}
+
+
 
 h1, h2, h3, h4, h5 {
   margin: 2.75rem 0 1rem;
 //   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 h1 {
@@ -25,3 +35,24 @@ h4 {font-size: 1.777em;}
 h5 {font-size: 1.333em;}
 
 small, .text_small {font-size: 0.75em;}
+
+
+ul {
+  list-style: dot;
+  list-style-position: inside;
+}
+
+
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: 600;
+  // &.active-link {
+  //   color: green;
+  // }
+  transition: all 0.25s ease;
+  &.exact-active-link, &:hover {
+    //border-bottom: 2px solid $orange;
+    color: $orange;
+  }
+}

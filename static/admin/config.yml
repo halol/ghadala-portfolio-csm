@@ -51,12 +51,19 @@ collections:
     format: 'json'
     sort: "date:desc" # Default is title:asc
     fields:
-      - { label: 'Title', name: 'title', widget: 'string'}
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
       - { label: 'Description', name: 'description', widget: 'string'}
       - { label: 'Cover', name: 'cover', widget: 'image'}
       - { label: 'Body', name: 'body', widget: 'markdown', required: false}
       - { label: 'URL', name: 'project_url', widget: 'string', required: false}
-      - { label: 'Mockups', name: 'mockups', widget: 'image', required: false}
+      - { label: 'Mockup1', name: 'mockup1', widget: 'image', required: false}
+      - { label: 'Mockup2', name: 'mockup2', widget: 'image', required: false}
+      - { label: 'Mockup3', name: 'mockup3', widget: 'image', required: false}
+      - { label: 'Mockup4', name: 'mockup4', widget: 'image', required: false}
+      - { label: 'Mockup5', name: 'mockup5', widget: 'image', required: false}
+
   - name: "art" # Used in routes, e.g., /admin/collections/blog
     label: "Art" # Used in the UI
     folder: "content/art" # The path to the folder where the documents are stored

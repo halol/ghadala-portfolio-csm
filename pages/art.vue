@@ -34,36 +34,10 @@ export default {
       return this.$store.state.allArt;
     }
   },
-  loading: true
+  transition: 'bounce'
 };
 </script>
 
 <style lang="scss">
-.grid {
-    display: flex;   
-}
-.artwork {
-    width: 100%;
-    //height: auto;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 4em;
-    img {
-        max-width:60%;
-    }
-}
-.art-info {
-    margin-left: 2em;
-    font-size: 0.9em;
-    min-width: 200px;
-    .title {
-        font-style: italic;
-        margin-bottom: 4px;
-    }
-    .medium {
-        color: grey;
-    }
-}
-
 
 </style>
