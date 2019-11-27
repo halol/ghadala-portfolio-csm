@@ -9,14 +9,14 @@
 
         <div class="column is-two-thirds">
             <div class="columns is-multiline">
-                <div class="column is-half" v-for="work in allWork" v-bind:key="work.id">
+                <div class="column is-half" v-for="work in allWork" v-bind:key="work.name">
                     
                         <div class="project-item">
                             <n-link :to=work._path class="title">
                             <figure class="mockup">
                                 <!-- Sqaure -->
                                 <!-- <img src="screen.png" alt=""> -->
-                                <img src="screen.png" />
+                                <img v-bind:src="work.cover" />
                             </figure>
                             </n-link>
                             <div class="caption">
@@ -51,6 +51,7 @@ export default {
 .project-item {
     display: flex;
     flex-direction: column;
+    margin-top: 3em;
 }
 
 .mockup {
@@ -59,19 +60,20 @@ export default {
     align-content: center;
     text-align: center;
     justify-content: center;
-    overflow: hidden;
+    //overflow: hidden;
     position: relative;
+    padding: 2em 0;
     &:after {
-        content: "";
-        padding-bottom: 100%;
-        display: block;
+        //content: "";
+        //padding-bottom: 100%;
+        //display: block;
     }
     img {
-        position: absolute;
+        //position: absolute;
         //top: 64px;
         top: 4em;
         width: 70%;
-        height: autol
+        height: auto;
     }
 }
 

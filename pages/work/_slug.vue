@@ -12,11 +12,18 @@
       <div class="column is-half">
         <div class="images">
           <img v-bind:src=cover />
-          <img v-if="mockup1" v-bind:src=mockup1 />
+
+          <img v-for="(mockup, index) in mockups" :key="index" v-bind:src="mockup" />
+          <!-- <img 
+          v-for="mockup in mockups" 
+          v-bind:key="index" 
+          v-bind:src="mockup[index]" /> -->
+
+          <!-- <img v-if="mockup1" v-bind:src=mockup1 />
           <img v-if="mockup2" v-bind:src=mockup2 />
           <img v-if="mockup3" v-bind:src=mockup3 />
           <img v-if="mockup4" v-bind:src=mockup4 />
-          <img v-if="mockup5" v-bind:src=mockup5 />
+          <img v-if="mockup5" v-bind:src=mockup5 /> -->
         </div>
       </div>
       </div>
@@ -32,11 +39,12 @@ export default {
       description: work.description,
       body: work.body,
       cover: work.cover,
-      mockup1: work.mockup1,
-      mockup2: work.mockup2,
-      mockup3: work.mockup3,
-      mockup4: work.mockup4,
-      mockup5: work.mockup5
+      // mockup1: work.mockup1,
+      // mockup2: work.mockup2,
+      // mockup3: work.mockup3,
+      // mockup4: work.mockup4,
+      // mockup5: work.mockup5,
+      mockups: work.mockups
     };
   } 
 }
@@ -75,12 +83,13 @@ export default {
 .images {
   background: #F9EFE6;
   text-align: center;
-  padding: 3em;
+  // padding: 3em;
+  padding: 4em 0;
   img {
     &:last-child {
       margin-bottom: 0em;
     }
-    max-width: 100%;
+    max-width: 70%;
     margin-bottom: 4em;
   }
 }

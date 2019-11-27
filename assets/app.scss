@@ -37,6 +37,7 @@ header {
   top: 0;
   background: white;
   z-index: 100;
+  transition: pall 0.25s ease;
 }
 
 .social {
@@ -75,7 +76,7 @@ nav {
     position: sticky;
     top: 8em;
     p {
-      margin-left: 2em;
+      //margin-left: 2em;
     }
 }
 
