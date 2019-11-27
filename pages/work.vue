@@ -22,6 +22,8 @@
                                 <p class="title">{{work.title}}</p>
                                 <p class="description">{{work.description}}</p>
                                 <n-link :to=work._path>{{work._path}}</n-link>
+                                <n-link :to="work._path">GO</n-link>
+                                <p>{{work}}</p>
                             </div>
                         </div>
                     

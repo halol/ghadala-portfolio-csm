@@ -1,10 +1,15 @@
 <template lang="html">
   <div class="columns">
     <div class="column">
-      <p class="post-link" v-for="post in blogPosts"><n-link :to="post._path">{{post.title}}</n-link></p>
+      <p class="post-link" v-for="post in blogPosts">
+        
+        <n-link :to="post._path">{{post.title}}</n-link>
+        <span>{{post._path}}</span>
+
+        </p>
       <h4>{{siteInfo.sitename}}</h4>
       <h1>{{siteInfo.sitedescription}}</h1>
-
+      
     </div>
   </div>
 </template>

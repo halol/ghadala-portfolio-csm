@@ -5,9 +5,7 @@ import glob from 'glob'
 
 var dynamicRoutes = getDynamicPaths({
   '/blog': 'blog/*.json',
-  '/page': 'page/*.json',
-  '/work': 'work/*.json',
-  '/art': 'art/*.json'
+  '/page': 'page/*.json'
 });
 
 console.log(dynamicRoutes);
