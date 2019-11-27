@@ -1,0 +1,10 @@
+{
+  "title": "Swift. Drink Sociably.",
+  "description": "Ordering drinks at the crowded pub with ease.",
+  "cover": "/images/uploads/swift-screen-cover.png",
+  "year": 2017,
+  "body": "[Case study](https://www.behance.net/gallery/55754117/Swift-Drink-Sociably)",
+  "mockups": {
+    "mockup1": "/images/uploads/swift-screen-1.png"
+  }
+}
