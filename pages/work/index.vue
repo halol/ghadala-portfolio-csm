@@ -9,7 +9,11 @@
 
         <div class="column is-two-thirds">
             <div class="columns is-multiline">
-                <div class="column is-half" v-for="work in allWork" v-bind:key="work.name">
+                <div class="column" 
+                    v-for="work in allWork" 
+                    v-bind:key="work.name"
+                    v-bind:class="{ 'is-half': work.layout == 'is-half', 'is-full': work.layout == 'is-full' }"
+                    >
                     
                         <div class="project-item">
                             <n-link :to=work._path class="title">
