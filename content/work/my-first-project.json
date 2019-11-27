@@ -4,7 +4,7 @@
   "cover": "/images/uploads/hqdefault.jpg",
   "year": 2019,
   "body": "### Kill me\n- amdasdkajnsd \n- asd asdlk asd \n",
-  "layout": "is-full",
+  "layout": true,
   "mockups": {
     "mockup1": "/images/uploads/imm020_21.jpg",
     "mockup2": "/images/uploads/imm020_21.jpg"
