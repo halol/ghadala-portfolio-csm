@@ -4,8 +4,8 @@ import path from 'path'
 import glob from 'glob'
 
 var dynamicRoutes = getDynamicPaths({
-  '/blog': 'blog/*.json',
-  '/page': 'page/*.json'
+  '/work': 'work/*.json',
+  //'/page': 'page/*.json'
 });
 
 console.log(dynamicRoutes);
