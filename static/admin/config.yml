@@ -42,7 +42,7 @@ collections:
     label: 'Work'
     identifier_field: name
     format: 'json'
-    folder: 'assets/content/work'
+    folder: 'content/work'
     slug: '{{slug}}'
     create: true
     editor:
@@ -59,7 +59,7 @@ collections:
     label: 'Art'
     identifier_field: name
     format: 'json'
-    folder: 'assets/content/art'
+    folder: 'content/art'
     create: true
     editor:
       preview: false
