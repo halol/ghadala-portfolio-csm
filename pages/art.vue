@@ -12,7 +12,7 @@
                     <div class="artwork" v-for="art in getArt" v-bind:key="art.slug">
                         <!-- <img v-bind:src="art.art_image" alt="art.title"> -->
                         
-                        <img v-bind:src="art.art_image" />
+                        <img v-bind:src="art.cover" />
                         <div class="art-info">
                             <p class="title">{{art.title}}, {{art.year}}</p>
                             <p class="medium">{{art.medium}}</p>

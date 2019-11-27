@@ -44,14 +44,14 @@ collections:
   
   - name: "work" # Used in routes, e.g., /admin/collections/blog
     label: "Work" # Used in the UI
-    identifier_field: project_name
+    identifier_field: title
     folder: "content/work" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     format: 'json'
     sort: "date:desc" # Default is title:asc
     fields:
-      - { label: 'Project name', name: 'project_name', widget: 'string'}
+      - { label: 'Title', name: 'title', widget: 'string'}
       - { label: 'Description', name: 'description', widget: 'string'}
       - { label: 'Cover', name: 'cover', widget: 'image'}
       - { label: 'Body', name: 'body', widget: 'markdown'}
@@ -67,7 +67,7 @@ collections:
     fields:
     - { label: 'Title', name: 'title', widget: 'string'}
     - { label: 'Medium', name: 'medium', widget: 'string'}
-    - { label: 'Image', name: 'art_image', widget: 'image'}
+    - { label: 'Image', name: 'cover', widget: 'image'}
     - { label: 'Year', name: 'year', widget: 'string'}
     - { label: 'Buy', name: 'buy_url', widget: 'string', required: false}
     - { label: 'Layout', name: 'layout', widget: 'select', options: ['w-50', 'w-25', 'square'], required: false}

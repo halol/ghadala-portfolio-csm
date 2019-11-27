@@ -9,8 +9,8 @@
 
         <div class="column is-two-thirds">
             <div class="columns is-multiline">
-                <div class="column is-half" v-for="work in allWork" v-bind:key="work.slug">
-                    <n-link :to="work._path">
+                <div class="column is-half" v-for="work in allWork" v-bind:key="work.index">
+                    
                         <div class="project-item">
                             <figure class="mockup">
                                 <!-- Sqaure -->
@@ -19,11 +19,12 @@
                             </figure>
                             <div class="caption">
                                 <!-- Free -->
-                                <p class="title">{{work.project_name}}</p>
+                                <p class="title">{{work.title}}</p>
                                 <p class="description">{{work.description}}</p>
+                                <n-link :to=work._path>{{work._path}}</n-link>
                             </div>
                         </div>
-                    </n-link>
+                    
                 </div>
             </div>
         </div>
@@ -35,9 +36,6 @@
 import ProjectItem from '~/components/ProjectItem.vue'
 
 export default {
-  components: {
-    ProjectItem,
-  },
   computed: {
     allWork() {
       return this.$store.state.allWork;
