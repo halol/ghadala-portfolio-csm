@@ -16,7 +16,8 @@ export default {
     siteInfo() {
       return this.$store.state.siteInfo;
     }
-  }
+  },
+  transition: 'fade'
 }
 </script>
 <style lang="scss">

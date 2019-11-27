@@ -1,7 +1,9 @@
 <template lang="html">
   <div class="project-details">
     <div class="columns">
-      <div class="column is-half">
+      <div class="column"
+        v-bind:class="[layout ? 'is-one-third' : 'is-half']"
+        >
         <div class="sticky-info">
           <a class="back-link" @click="$router.back()">&larr; Back to work</a>
           <h2>{{title}}</h2>
@@ -9,21 +11,11 @@
           <div class="body" v-html="$md.render(body)"/>
         </div>
       </div>
-      <div class="column is-half">
+      <div class="column"
+        v-bind:class="[layout ? 'is-two-thirds' : 'is-half']">
         <div class="images">
           <img v-bind:src=cover />
-
           <img v-for="(mockup, index) in mockups" :key="index" v-bind:src="mockup" />
-          <!-- <img 
-          v-for="mockup in mockups" 
-          v-bind:key="index" 
-          v-bind:src="mockup[index]" /> -->
-
-          <!-- <img v-if="mockup1" v-bind:src=mockup1 />
-          <img v-if="mockup2" v-bind:src=mockup2 />
-          <img v-if="mockup3" v-bind:src=mockup3 />
-          <img v-if="mockup4" v-bind:src=mockup4 />
-          <img v-if="mockup5" v-bind:src=mockup5 /> -->
         </div>
       </div>
       </div>
@@ -39,6 +31,7 @@ export default {
       description: work.description,
       body: work.body,
       cover: work.cover,
+      layout: work.layout,
       // mockup1: work.mockup1,
       // mockup2: work.mockup2,
       // mockup3: work.mockup3,
@@ -46,7 +39,8 @@ export default {
       // mockup5: work.mockup5,
       mockups: work.mockups
     };
-  } 
+  },
+  transition: "fade"
 }
 </script>
 

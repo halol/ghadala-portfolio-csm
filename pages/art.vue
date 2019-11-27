@@ -34,7 +34,7 @@ export default {
       return this.$store.state.allArt;
     }
   },
-  transition: 'bounce'
+  transition: 'fade'
 };
 </script>
 

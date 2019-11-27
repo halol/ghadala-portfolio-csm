@@ -8,11 +8,11 @@
         </div>
 
         <div class="column is-two-thirds">
-            <div class="columns is-multiline">
+            <div class="columns is-multiline tiles">
                 <div class="column" 
-                    v-for="work in allWork" 
+                    v-for="work in orderedWorks" 
                     v-bind:key="work.name"
-                    v-bind:class="{ 'is-half': work.layout == 'is-half', 'is-full': work.layout == 'is-full' }"
+                    v-bind:class="[work.layout ? 'is-full' : 'is-half']"
                     >
                     
                         <div class="project-item">
@@ -40,14 +40,17 @@
 <script>
 
 // import ProjectItem from '~/components/ProjectItem.vue'
-
+import _ from 'lodash';  
 export default {
   computed: {
     allWork() {
       return this.$store.state.allWork;
     },
+    orderedWorks: function () {
+        return _.orderBy(this.allWork, 'year', ['desc'])
+    }
   },
-  transition: 'bounce'
+  transition: 'fade'
 }
 </script>
 
@@ -58,8 +61,18 @@ export default {
     margin-top: 3em;
 }
 
+.tiles {
+    .column {
+        &:nth-child(even) {
+            .project-item {
+                margin-top: 8em;
+            }
+        }
+    }
+}
+
 .mockup {
-    background: #F7F7F7;
+    //background: #F7F7F7;
     display: flex;
     align-content: center;
     text-align: center;
@@ -67,23 +80,32 @@ export default {
     //overflow: hidden;
     position: relative;
     padding: 2em 0;
+    
+    &:hover {
+        img {
+            transform: scale(1);
+        }
+    }
     &:after {
         //content: "";
         //padding-bottom: 100%;
         //display: block;
     }
     img {
+        transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
         //position: absolute;
         //top: 64px;
         top: 4em;
-        width: 70%;
+        width: 100%;
         height: auto;
+        transform: scale(.9);
     }
 }
 
 .caption {
     //font-size: 0.9em;
     margin-top: 1em;
+    margin-left: 2em;
     .title {
         font-weight: 600;
         //font-size: 1em;

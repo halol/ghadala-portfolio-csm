@@ -15,6 +15,10 @@ $fix: $column-gap * 2;
             flex: none;
             width: calc(50% - 4em);
         }
+        &.is-full {
+            flex: none;
+            width: calc(100% - 4em);
+        }
         &.is-one-third {
             flex: none;
             width: calc(calc(100% / 3) - 4em);
