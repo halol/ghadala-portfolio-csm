@@ -2,8 +2,10 @@
   "title": "My First Project",
   "description": "Please kill me",
   "cover": "/images/uploads/hqdefault.jpg",
+  "year": 2019,
   "body": "### Kill me\n- amdasdkajnsd \n- asd asdlk asd \n",
-  "mockup1": "/images/uploads/hqdefault.jpg",
-  "mockup2": "/images/uploads/frank-the-tank-old-school-648737_900_600-1-2.jpg",
-  "mockup3": "/images/uploads/awesome-nerd-party.jpg"
+  "mockups": {
+    "mockup1": "/images/uploads/imm020_21.jpg",
+    "mockup2": "/images/uploads/imm020_21.jpg"
+  }
 }
