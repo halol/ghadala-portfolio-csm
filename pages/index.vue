@@ -4,6 +4,9 @@
       <h1>{{siteInfo.sitename}}</h1>
       <p>{{siteInfo.sitedescription}}</p>
     </div>
+    <div>
+      <n-link to="/work">Work</n-link>
+    </div>
     <div class="posts-list">
       <h2 class="posts-list-title">Posts</h2>
       <p class="post-link" v-for="post in blogPosts"><n-link :to="post._path">{{post.title}}</n-link></p>
