@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { VLazyImagePlugin } from "v-lazy-image"
 Vue.use(Vuex)
-Vue.use(VLazyImagePlugin)
 
 export const state = () => ({
   blogPosts: [],
