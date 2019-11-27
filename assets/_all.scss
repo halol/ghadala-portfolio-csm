@@ -3,3 +3,9 @@
 @import "reset.scss";
 @import "grid.scss";
 @import "type.scss";
+
+
+.sticky-info {
+    position: sticky;
+    top: 8em;
+}

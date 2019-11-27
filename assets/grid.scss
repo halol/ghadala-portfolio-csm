@@ -1,5 +1,5 @@
-$column-gap: 1em;
-
+$column-gap: 2em;
+$fix: $column-gap * 2;
 .columns {
     display: flex;
     margin-left: $column-gap * -1;
@@ -10,5 +10,21 @@ $column-gap: 1em;
         flex-basis: 0;
         flex-grow: 1;
         flex-shrink: 1;
+        &.is-half {
+            flex: none;
+            width: calc(50% - 4em);
+        }
+        &.is-one-third {
+            flex: none;
+            width: calc(calc(100% / 3) - 4em);
+        }
+        &.is-two-thirds {
+            flex: none;
+            width: calc(66.6666% - 4em);
+        }
     }
+}
+
+.is-multiline {
+    flex-wrap: wrap;
 }
