@@ -6,6 +6,8 @@ import glob from 'glob'
 var dynamicRoutes = getDynamicPaths({
   '/blog': 'blog/*.json',
   '/page': 'page/*.json',
+  '/work': 'work/*.json',
+  '/art': 'art/*.json'
 });
 
 console.log(dynamicRoutes);
@@ -31,7 +33,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#ccc' },
 
   /*
   ** Global CSS
@@ -80,6 +82,10 @@ export default {
   },
   generate: {
     routes: dynamicRoutes
+  },
+  router: {
+    linkActiveClass: 'active-link',
+    linkExactActiveClass: 'exact-active-link',
   }
 }
 

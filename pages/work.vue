@@ -13,6 +13,11 @@ export default {
   components: {
     ProjectItem,
   },
+  computed: {
+    allWork() {
+      return this.$store.state.allWork;
+    },
+  },
   loading: true
 }
 </script>
