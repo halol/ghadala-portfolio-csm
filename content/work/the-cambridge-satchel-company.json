@@ -1,0 +1,11 @@
+{
+  "title": "The Cambridge Satchel Company",
+  "description": "Redesign proposal.",
+  "cover": "/images/uploads/cambridge_1_1130.png",
+  "year": 2013,
+  "layout": true,
+  "mockups": {
+    "mockup1": "/images/uploads/cambridge_2_1130.png",
+    "mockup2": "/images/uploads/cambridge_3_1130.png"
+  }
+}
