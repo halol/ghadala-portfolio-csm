@@ -1,13 +1,25 @@
 <template>
-    <div class="columns">
-        <div class="column is-one-third">
-            <div class="sticky-info">
-                <h1 class="sty">Work</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum corporis vitae quam porro deserunt minus sequi et eius obcaecati non sapiente quae nam necessitatibus, placeat exercitationem qui cum. Nesciunt, deserunt?</p>
+    <div class="columnsz">
+        <!-- <div class="column is-one-third">
+            <page-info 
+                title="Work"
+                description="Some description about work">
+            </page-info>
+            <div class="sticky">
+                <ul>
+                    <li>Something 1</li>
+                    <li>Something 2</li>
+                    <li>Something 3</li>
+                    <li>Something 4</li>
+                    <li>Something 5</li>
+                </ul>
             </div>
-        </div>
-
-        <div class="column is-two-thirds">
+        </div> -->
+        <div class="columnz is-two-thirdsz">
+            <page-info 
+                title="Work"
+                description="Some description about work">
+            </page-info>
             <div class="columns is-multiline tiles">
                 <div class="column" 
                     v-for="work in orderedWorks" 
@@ -39,8 +51,9 @@
 
 <script>
 
-// import ProjectItem from '~/components/ProjectItem.vue'
+import PageInfo from '~/components/PageInfo.vue'
 import _ from 'lodash';  
+
 export default {
   computed: {
     allWork() {
@@ -50,15 +63,20 @@ export default {
         return _.orderBy(this.allWork, 'year', ['desc'])
     }
   },
+  components: {
+      PageInfo
+  },
   transition: 'fade'
 }
 </script>
 
 <style lang="scss">
+@import "~/assets/variables.scss";
+
 .project-item {
     display: flex;
     flex-direction: column;
-    margin-top: 3em;
+    //margin-top: 3em;
 }
 
 .tiles {
@@ -72,33 +90,23 @@ export default {
 }
 
 .mockup {
-    //background: #F7F7F7;
     display: flex;
     align-content: center;
     text-align: center;
     justify-content: center;
-    //overflow: hidden;
     position: relative;
-    padding: 2em 0;
-    
+    //padding: 2em 0;
     &:hover {
         img {
             transform: scale(1);
         }
     }
-    &:after {
-        //content: "";
-        //padding-bottom: 100%;
-        //display: block;
-    }
     img {
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
-        //position: absolute;
-        //top: 64px;
         top: 4em;
         width: 100%;
         height: auto;
-        transform: scale(.9);
+        transform: scale(.95);
     }
 }
 
@@ -114,6 +122,40 @@ export default {
     .description {
         font-weight: 400;
         color: grey;
+    }
+}
+
+@media screen and (max-width: $max-mobile) {
+    .caption {
+        margin-left: 0em;
+    }
+    .tiles {
+        .column {
+            &:first-child {
+                margin-top: 4em;
+            }
+            &:not(:last-child) {
+                margin-bottom: 4em;
+            }
+            &:nth-child(even) {
+                .project-item {
+                    margin-top: 0em;
+                }
+            }
+            &.is-half {
+                .project-item {
+                    > * {
+                        width: 50%;
+                    }
+                    .caption {
+                        margin-left: 2em;
+                    }
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+            }
+        }
     }
 }
 </style>

@@ -1,18 +1,29 @@
-@import "variables.scss";
-
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
-  padding: 3em;
+  //padding: 3em;
   font-size: 17px;
   line-height: 1.5;
   height: calc(100vh - (6em));
+  color: $black;
+}
+
+img {
+  vertical-align: bottom;
 }
 
 * {
   //outline: 1px solid red;
 }
 
+.sticky {
+  position: sticky;
+  top: 2em;
+  @media screen and (max-width: $max-mobile) {
+    position: relative;
+    margin-top: 0;
+    top: 0;
+  }
+}
 
 .layout {
   height: calc(100vh - (6em));
@@ -28,82 +39,83 @@ body {
   justify-content: space-between;
 }
 
-
-header {
-  padding: 1em 0;
-  border-bottom:2px solid $black;
-  margin-top: -2em;
-  position: sticky;
-  top: 0;
-  background: white;
-  z-index: 100;
-  transition: pall 0.25s ease;
+.main {
+  padding-left: 3em;
+  padding-right: 3em;
+  padding-top: 3em;
+  padding-bottom: 6em;
+  @media screen and (max-width: $max-mobile) {
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-top: 2em;
+    padding-bottom: 4em;
+  }
 }
 
-.social {
+
+header {
+  //padding: 1em 0;
+  border-top:2px solid $black;
+  //margin-bottom: -2em;
+  position: fixed;
+  //width: calc(100% - 4em);
+  //left: 2em;
+  left: 3em;
+  right: 3em;
+  height: 64px;
+  bottom: 0;
+  background: white;
+  z-index: 100;
   display: flex;
-  a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 24px;
-    width: 24px;
-    border-radius: 4px;
-    &:first-child {
-      margin-right: 1em;
-    }
-    &:hover {
-      background: rgba($black, 0.05);
-    }
+  @media screen and (max-width: 414px) {
+    //background: red;
   }
-  img {
-    width: 16px;
-    height: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  @media screen and (max-width: $max-mobile) {
+    left: 2em;
+    right: 2em;
+  }
+}
+
+
+.options {
+  display: flex;
+  > * {
+    &:not(:first-child) {
+      margin-left: 12px;
+    }
   }
 }
 nav {
-  font-size: 0.9em;
-  * {
-    margin-right: 4em;
-    &:last-child {
-      margin: 0;
+  //font-size: 0.9em;
+  a {
+    //margin-right: 4em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 64px;
+    //padding: 4px;
+    &:not(:last-child) {
+      margin-right: 3em;
+    }
+    &:first-child {
+      //margin-left: -4px;
+    }
+    @media screen and (max-width: $max-mobile) {
+      
+      &:not(:last-child) {
+        margin-right: .5em;
+      }
     }
   }
-  
-}
-
-.sticky-info {
-    position: sticky;
-    top: 8em;
-    p {
-      //margin-left: 2em;
-    }
 }
 
 
-.artwork {
-    width: 100%;
-    //height: auto;
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 4em;
-    img {
-        max-width:60%;
-    }
-}
-.art-info {
-    margin-top: 2em;
-    margin-left: 2em;
-    font-size: 0.9em;
-    min-width: 200px;
-    .title {
-        font-style: italic;
-        margin-bottom: 4px;
-    }
-    .medium {
-        color: grey;
-    }
-}
+
 
 
 
@@ -127,4 +139,9 @@ nav {
 /* .slide-fade-leave-active below version 2.1.8 */ {
   transform: translateX(10px);
   opacity: 0;
+}
+
+
+.app-wrapper {
+  min-height: 100vh;
 }

@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   branch: master # Branch to update (optional; defaults to master)
-
+publish_mode: editorial_workflow
 media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads"
 
@@ -16,6 +16,14 @@ collections:
       fields:
         - {label: Site Name, name: sitename, widget: string}
         - {label: Site Description, name: sitedescription, widget: string}
+    # TODO
+        # - label: "About"
+    #   name: "about"
+    #   format: 'json'
+    #   file: "content/setup/about.json"
+    #   fields:
+    #     - {label: Site Name, name: sitename, widget: string}
+    #     - {label: Site Description, name: sitedescription, widget: string}
   
   - name: "work" # Used in routes, e.g., /admin/collections/blog
     label: "Work" # Used in the UI
@@ -27,6 +35,7 @@ collections:
     sort: "year:desc" # Default is title:asc
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: "Show?", name: "show", widget: "boolean", default: true}
       - { label: 'Description', name: 'description', widget: 'string'}
       - { label: 'Cover', name: 'cover', widget: 'image'}
       - { label: 'Year', name: 'year', widget: 'number'}
@@ -51,10 +60,18 @@ collections:
     format: 'json'
     sort: "date:desc" # Default is title:asc
     fields:
+    - {label: "Show?", name: "show", widget: "boolean", default: true}
     - { label: 'Title', name: 'title', widget: 'string'}
-    - { label: 'Category', name: 'category', widget: 'select', options: ['photography', 'painting', 'drawing', 'installation']}
-    - { label: 'Medium', name: 'medium', widget: 'string'}
     - { label: 'Image', name: 'cover', widget: 'image'}
-    - { label: 'Year', name: 'year', widget: 'string', required: false}
+    - label: 'Category'
+      name: 'category'
+      widget: 'select'
+      options:
+      - { label: "Painting", value: "painting" }
+      - { label: "Drawing", value: "drawing" }
+      - { label: "Photography", value: "photography" }
+      - { label: "Instalation", value: "installation" }
+    - { label: 'Medium', name: 'medium', widget: 'string', required: false}
+    - { label: 'Year', name: 'year', widget: 'number', required: false}
     - { label: 'Buy', name: 'buy_url', widget: 'string', required: false}
     - { label: 'Layout', name: 'layout', widget: 'select', options: ['w-50', 'w-25', 'square'], required: false}

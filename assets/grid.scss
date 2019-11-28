@@ -1,10 +1,13 @@
 @import "variables.scss";
 
-$fix: $column-gap * 2;
 .columns {
     display: flex;
     margin-left: $column-gap * -1;
     margin-right: $column-gap * -1;
+    @media screen and (max-width: $max-mobile) {
+        flex-direction: column;
+        margin: 0;
+    }
     .column {
         padding: 0 $column-gap;
         display: block;
@@ -26,6 +29,20 @@ $fix: $column-gap * 2;
         &.is-two-thirds {
             flex: none;
             width: calc(66.6666% - 4em);
+        }
+        @media screen and (max-width: $max-mobile) {
+            flex: none;
+            width: 100%;
+            margin: 0;
+        }
+
+        &.is-half, &.is-full, &.is-one-third, &.is-two-thirds {
+            @media screen and (max-width: $max-mobile) {
+                flex: none;
+                width: 100%;
+                margin:0;
+                padding: 0;
+            }
         }
     }
 }

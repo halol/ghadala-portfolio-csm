@@ -1,9 +1,6 @@
 <template lang="html">
-  <div class="columns">
-    <div class="column">
-      <!-- <h4>{{siteInfo.sitename}}</h4> -->
-      <h1 class="hero">{{siteInfo.sitedescription}}</h1>  
-    </div>
+  <div class="home">
+    <h1 class="hero">{{siteInfo.sitedescription}}</h1>  
   </div>
 </template>
 

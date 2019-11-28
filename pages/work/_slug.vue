@@ -4,10 +4,10 @@
       <div class="column"
         v-bind:class="[layout ? 'is-one-third' : 'is-half']"
         >
-        <div class="sticky-info">
-          <a class="back-link" @click="$router.back()">&larr; Back to work</a>
-          <h2>{{title}}</h2>
-          <p class="description">{{description}}</p>
+        <div class="sticky">
+          <a class="back-link" @click="$router.back()">&larr; <span>Back to work</span></a>
+          <h3>{{title}}</h3>
+          <p class="lead">{{description}}</p>
           <div class="body" v-html="$md.render(body)"/>
         </div>
       </div>
@@ -32,11 +32,6 @@ export default {
       body: work.body,
       cover: work.cover,
       layout: work.layout,
-      // mockup1: work.mockup1,
-      // mockup2: work.mockup2,
-      // mockup3: work.mockup3,
-      // mockup4: work.mockup4,
-      // mockup5: work.mockup5,
       mockups: work.mockups
     };
   },
@@ -45,6 +40,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~/assets/variables.scss";
+
 .project-details {
   position: fixed;
   z-index: 500;
@@ -60,21 +57,43 @@ export default {
   &:hover {
     cursor: pointer;
   }
+  @media screen and (max-width: $max-mobile) {
+    border-radius: 999px;
+    //border: 2px solid black;
+    box-shadow: inset 0 0 0 2px black;
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    &:hover {
+      box-shadow: inset 0 0 0 0px rgba(black, 0);
+      background: white;
+    }
+    span {
+      display: none;
+    }
+  }
 }
 .description {
   font-size: 1.5em;
   font-weight: 300;
 }
-.body {
-  ul {
-    //
-  }
-}
 .sticky-info {
   padding: 4em;
   top: 0;
 }
+.sticky {
+  padding: 3em;
+  top: 0;
+}
 .images {
+  min-height: calc(100vh - 8em);
   background: #F9EFE6;
   text-align: center;
   // padding: 3em;
@@ -86,5 +105,9 @@ export default {
     max-width: 70%;
     margin-bottom: 4em;
   }
+}
+.body {
+  padding-top: 1em;
+  border-top: 2px solid $orange-light; 
 }
 </style>
