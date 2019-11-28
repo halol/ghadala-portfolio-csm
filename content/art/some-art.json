@@ -1,6 +1,9 @@
 {
-  "title": "Some art",
-  "medium": "Tears",
+  "show": true,
+  "title": "Some art test",
   "cover": "/images/uploads/imm020_21.jpg",
-  "year": "2019"
+  "category": "photography",
+  "medium": "Medium",
+  "year": "2019",
+  "buy_url": "http://www.shop.com/buy/1231"
 }
