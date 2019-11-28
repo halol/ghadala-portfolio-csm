@@ -1,0 +1,1 @@
+{"type":"PR","pr":{"number":4,"head":"29cd540c7f04d8c5abb3122effbf1f0cd7648ac1"},"user":"Grzegorz Hadała","status":"draft","branch":"cms/some-art","collection":"art","title":"Some art test","description":"No Description!","objects":{"entry":{"path":"content/art/some-art.json","sha":"ea12e85790b728e6f5e12944fbb4df65aeb81c9a"},"files":[]},"timeStamp":"2019-11-28T20:18:21.246Z"}
