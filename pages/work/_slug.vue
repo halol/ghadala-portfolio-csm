@@ -45,7 +45,7 @@ export default {
 .project-details {
   position: fixed;
   z-index: 500;
-  background: white;
+  background:$main-background;
   top: 0;
   bottom: 0;
   right: 0;
@@ -94,7 +94,7 @@ export default {
 }
 .images {
   min-height: calc(100vh - 8em);
-  background: #F9EFE6;
+  background: $images-background;
   text-align: center;
   // padding: 3em;
   padding: 4em 0;
@@ -107,7 +107,6 @@ export default {
   }
 }
 .body {
-  padding-top: 1em;
-  border-top: 2px solid $orange-light; 
+   
 }
 </style>

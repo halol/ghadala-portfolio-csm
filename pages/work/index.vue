@@ -16,10 +16,10 @@
             </div>
         </div> -->
         <div class="columnz is-two-thirdsz">
-            <page-info 
+            <!-- <page-info 
                 title="Work"
                 description="Some description about work">
-            </page-info>
+            </page-info> -->
             <div class="columns is-multiline tiles">
                 <div class="column" 
                     v-for="work in orderedWorks" 
@@ -121,7 +121,7 @@ export default {
     }
     .description {
         font-weight: 400;
-        color: grey;
+        color:$dimmed-color;
     }
 }
 

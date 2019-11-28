@@ -4,7 +4,20 @@ $blue: #0E3FF2;
 $orange-light: #F9EFE6;
 $light-gray: #F7F7F7;
 
-$grey: lighter($black, 50%);
+$grey: rgba($black, 50%);
+
+
+// Theme orange
+$main-background: white;
+$main-color: $black;
+$header-color: $orange;
+$dimmed-color: rgba($main-color, 0.5);
+$images-background: $orange-light;
+$link-normal: $black;
+$link-hover: $orange;
+$link-active: $orange;
+
+
 
 $column-gap: 2em;
 

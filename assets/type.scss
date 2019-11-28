@@ -26,6 +26,7 @@ h1, h2, h3, h4, h5 {
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.025em;
+  color: $header-color;
 }
 
 h1 {
@@ -66,15 +67,18 @@ ul {
 
 
 a {
-  color: black;
+  color: $link-normal;
   text-decoration: none;
   font-weight: 600;
   // &.active-link {
   //   color: green;
   // }
   transition: all 0.25s ease;
-  &.exact-active-link, &:hover {
+  &:hover {
+    color: $link-hover;
+  }
+  &.exact-active-link {
     //border-bottom: 2px solid $orange;
-    color: $orange;
+    color: $link-active;
   }
 }

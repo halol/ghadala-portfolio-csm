@@ -5,6 +5,7 @@ body {
   line-height: 1.5;
   height: calc(100vh - (6em));
   color: $black;
+  background: $main-background;
 }
 
 img {
@@ -64,7 +65,7 @@ header {
   right: 3em;
   height: 64px;
   bottom: 0;
-  background: white;
+  background: $main-background;
   z-index: 100;
   display: flex;
   @media screen and (max-width: 414px) {
@@ -101,9 +102,6 @@ nav {
     //padding: 4px;
     &:not(:last-child) {
       margin-right: 3em;
-    }
-    &:first-child {
-      //margin-left: -4px;
     }
     @media screen and (max-width: $max-mobile) {
       
@@ -145,3 +143,4 @@ nav {
 .app-wrapper {
   min-height: 100vh;
 }
+
