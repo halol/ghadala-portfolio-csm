@@ -1,43 +1,33 @@
 <template>
-    <div class="columns">
-        <div class="column">
-            <div class="artwork" v-for="art in getArt" v-bind:key="art.slug">              
-                <figure>
-                    <!-- <img v-bind:src="art.cover" /> -->
-                    <show-image :image="art.cover" :title="art.title"></show-image>
-                </figure>
-                <div class="art-info">
-                    <p class="title">{{art.title}}<span :if="art.year">, {{art.year}}</span></p>
-                    <p class="medium">{{art.medium}}</p>
-                    <p :if="art.category" class="category">{{art.category}}</p>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+        <art-tile v-for="art in getArt" v-bind:key="art.slug" :artwork="art" :if="art.show" v-bind:data-category="art.category"></art-tile>
     </div>
 </template>
 
 <script>
 
-import PageInfo from '~/components/PageInfo.vue'
-import ShowImage from '~/components/ShowImage.vue'
+// import PageInfo from '~/components/PageInfo.vue'
+import ArtTile from '~/components/ArtTile.vue'
 
 export default {
-  computed: {
-    getArt() {
-      return this.$store.state.allArt;
-    }
-  },
-  components: {
-      PageInfo,
-      ShowImage
-  },
-  transition: 'fade',
-  filters: {
-    capitalize: function (value) {
-        if (!value) return ''
-        value = value.toString()
-        return value.charAt(0).toUpperCase() + value.slice(1)
-    }
+    computed: {
+        getArt() {
+            return this.$store.state.allArt;
+        },
+        createLayout() {
+            let artworks = this.$store.state.allArt.length;
+        }
+    },
+    components: {
+        ArtTile
+    },
+    transition: 'fade',
+    filters: {
+        capitalize: function (value) {
+            if (!value) return ''
+            value = value.toString()
+            return value.charAt(0).toUpperCase() + value.slice(1)
+        }
     }
 };
 </script>
@@ -47,7 +37,7 @@ export default {
 .artwork {
     display: flex;
     figure {
-        padding: .5em;
+        //padding: .5em;
         background: $light-gray;
         img {
             width: 100%;
@@ -69,4 +59,21 @@ export default {
         margin-bottom: 4px;
     }
 }
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 2em;
+    //background: $orange;
+    @media screen and (max-width: $max-mobile) {
+        display: flex;
+        flex-flow: column wrap;
+        .item {
+            margin-bottom: 2em;
+        }
+    }
+}
+
+
+
 </style>
