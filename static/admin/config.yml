@@ -17,6 +17,18 @@ media_library:
   config:
     cloud_name: decakckik
     api_key: 695384476349563
+    output_filename_only: false
+    #output_filename_only: false => get more freedom to manage files
+    #<img src="https://res.cloudinary.com/<cloud_name>/<resource_type>/<type>/<transformations>/{{image}}"/>
+    #img srcset to be applied
+    #image as a component!
+
+    config:
+      default_transformations:
+        -   - fetch_format: auto
+              width: 1280
+              quality: auto
+              #crop: scale
 
 collections:
   - name: "setup"

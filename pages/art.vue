@@ -1,25 +1,10 @@
 <template>
     <div class="columns">
-        <div class="column is-one-third">
-            <page-info 
-                title="Artwork"
-                description="Some description about work">
-            </page-info>
-            <!-- <div class="sticky">
-                <div>
-                    <input type="radio" name="category" id="all" checked="checked" value="all">
-                    <label for="all">Everything</label>
-                </div>
-                <div v-for="art in getArt" v-bind:key="art.slug">
-                    <input type="radio" name="category" :id="art.category" :value="art.category">
-                    <label v-bind:for="art.category">{{art.category | capitalize}}</label>
-                </div>
-            </div> -->
-        </div>
-        <div class="column is-two-thirds">
+        <div class="column">
             <div class="artwork" v-for="art in getArt" v-bind:key="art.slug">              
                 <figure>
-                    <img v-bind:src="art.cover" />
+                    <!-- <img v-bind:src="art.cover" /> -->
+                    <show-image :image="art.cover" :title="art.title"></show-image>
                 </figure>
                 <div class="art-info">
                     <p class="title">{{art.title}}<span :if="art.year">, {{art.year}}</span></p>
@@ -34,6 +19,7 @@
 <script>
 
 import PageInfo from '~/components/PageInfo.vue'
+import ShowImage from '~/components/ShowImage.vue'
 
 export default {
   computed: {
@@ -42,7 +28,8 @@ export default {
     }
   },
   components: {
-      PageInfo
+      PageInfo,
+      ShowImage
   },
   transition: 'fade',
   filters: {
