@@ -4,13 +4,17 @@ backend:
 publish_mode: editorial_workflow
 media_folder: "static/images/uploads" # Media files will be stored in the repo under images/uploads
 public_folder: "/images/uploads"
-media_library:
-  name: uploadcare
-  config:
-    publicKey: ef0ad3a83a6c87e13eaf
-  settings:
-    autoFilename: true
-    defaultOperations: '/resize/1280x1280/'
+# media_library:
+#   name: uploadcare
+#   config:
+#     publicKey: ef0ad3a83a6c87e13eaf
+#   settings:
+#     autoFilename: true
+#     defaultOperations: '/resize/1280x1280/'
+backend:
+  name: git-gateway
+  ## Set to false to prevent transforming images in media gallery view
+  use_large_media_transforms_in_media_library: true
 
 collections:
   - name: "setup"
