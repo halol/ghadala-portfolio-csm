@@ -11,10 +11,6 @@ public_folder: "/images/uploads"
 #   settings:
 #     autoFilename: true
 #     defaultOperations: '/resize/1280x1280/'
-backend:
-  name: git-gateway
-  ## Set to false to prevent transforming images in media gallery view
-  use_large_media_transforms_in_media_library: true
 
 collections:
   - name: "setup"
