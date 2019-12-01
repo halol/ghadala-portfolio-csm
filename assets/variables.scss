@@ -7,16 +7,17 @@ $light-gray: #F7F7F7;
 
 $grey: rgba($black, 50%);
 
+$accent: $blue;
 
 // Theme orange
 $main-background: white;
 $main-color: $black;
-$header-color: $orange;
+$header-color: $accent;
 $dimmed-color: rgba($main-color, 0.5);
 $images-background: $orange-light;
 $link-normal: $black;
-$link-hover: $orange;
-$link-active: $orange;
+$link-hover: $accent;
+$link-active: $link-hover;
 
 
 
