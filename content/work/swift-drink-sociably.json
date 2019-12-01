@@ -1,11 +1,13 @@
 {
   "title": "Swift. Drink Sociably.",
+  "show": true,
   "description": "Ordering drinks at the crowded pub with ease.",
-  "cover": "/images/uploads/swift-screen-cover.png",
+  "cover": "https://res.cloudinary.com/decakckik/image/upload/v1575217540/renders/swift01_hbco3j.png",
   "year": 2017,
   "body": "[Case study](https://www.behance.net/gallery/55754117/Swift-Drink-Sociably)",
   "layout": false,
   "mockups": {
-    "mockup1": "/images/uploads/swift-screen-1.png"
+    "mockup1": "https://res.cloudinary.com/decakckik/image/upload/v1575217540/renders/swift02_ze6e92.png",
+    "mockup2": "https://res.cloudinary.com/decakckik/image/upload/v1575217540/renders/swift03_tn19qv.png"
   }
 }
