@@ -1,7 +1,8 @@
 {
   "title": "Latetrip.com",
+  "show": true,
   "description": "Holiday packages search engine.",
-  "cover": "/images/uploads/latetrip-macbook-1-1.png",
+  "cover": "https://res.cloudinary.com/decakckik/image/upload/v1575217539/renders/latetrip-macbook-1_1_u5mw05.png",
   "year": 2016,
   "body": "",
   "layout": true
