@@ -60,23 +60,31 @@ export default {
 
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: auto;
-    grid-gap: 4em;
+    //grid-gap: 4em;
     grid-auto-flow: dense;
     .grid-item {
         //background: $light-gray;
+        display: flex;
+        justify-content: stretch;
+        flex-flow: column nowrap;
+        //background: orange;
     }
     &:first-child {
-        //grid-column: 1 / 2;
+        grid-column-end: span 2;
     }
     .is-half {
-        grid-column-end: span 1;
-        grid-row-end: span 2;
+        //grid-column-end: span 1;
+        //grid-row-end: span 2;
     }
     *.is-full {
-        grid-column-end: span 2;
-        grid-row-end: span 1;
+        //grid-column-end: span 2;
+        //grid-row-end: span 1;
+        .mockup {
+            //background: $light-gray;
+            //padding: .5em;
+        }
     }
     @media screen and (max-width: $max-mobile) {
         grid-template-columns: repeat(2, 1fr);
@@ -95,8 +103,12 @@ export default {
 
 .project-item {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    //width: 100%;
+    background: orange;
     //margin-top: 3em;
+    padding: 3em;
+    margin-bottom: 4em;
 }
 
 .tiles {
@@ -112,39 +124,48 @@ export default {
 
 .mockup {
     //max-width: 80%;
+    width: 50%;
     display: flex;
     align-content: center;
     text-align: center;
     justify-content: center;
     position: relative;
+    //max-height: 90vh;
+    overflow: hidden;
     //padding: 2vw;
     //padding: 2em 0;
     &:hover {
         img {
-            transform: scale(1.025);
+            //transform: scale(1.025);
         }
     }
     img {
         transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
         //top: 4em;
         width: 100%;
-        height: auto;
-        transform: scale(1);
+        height: 100%;
+        vertical-align: bottom;
+        //transform: scale(1);
     }
 }
 
 .caption {
+    //display: none;
     //font-size: 0.9em;
-    margin-top: 1em;
-    padding: 0 1em;
+    //margin-top: 1em;
+    width: 50%;
+    padding: 1em;
+    //background: $light-gray;
     .title {
         font-weight: 600;
         //font-size: 1em;
-        margin-bottom: 4px;
+        //margin-bottom: 4px;
+        margin-bottom: 0;
     }
     .description {
         font-weight: 400;
         color:$dimmed-color;
+        margin-bottom: 0;
     }
 }
 
