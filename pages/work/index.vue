@@ -1,9 +1,5 @@
 <template>
     <div class="work-grid">
-        <div class="grid-item">
-            <h1>Work</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam libero eveniet quo ullam numquam quasi laborum, reiciendis voluptate! Hic dolore sit consequatur vel accusamus facilis reprehenderit, cumque delectus incidunt quibusdam.</p>
-        </div>
         <div class="grid-item" 
             v-for="work in orderedWorks" 
             v-bind:key="work.name"
@@ -101,15 +97,6 @@ export default {
 }
 
 
-.project-item {
-    display: flex;
-    flex-direction: row;
-    //width: 100%;
-    background: orange;
-    //margin-top: 3em;
-    padding: 3em;
-    margin-bottom: 4em;
-}
 
 .tiles {
     .column {

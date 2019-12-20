@@ -1,32 +1,20 @@
 <template>
   <div class="app-wrapper">
+    <page-header></page-header>
     <article class="main"> 
       <nuxt class="content" />
     </article>
-    <header>
-      <div class="navigation">
-        <nav>
-          <n-link to="/">Hi!</n-link>
-          <n-link to="/work">Work</n-link>
-          <n-link to="/art">Artwork</n-link>
-          <n-link to="/about">About</n-link>
-        </nav>
-      </div>
-      <div class="options">
-        <a href="https://www.linkedin.com/in/grzegorzhadala/"><img src="linkedin.svg" alt=""></a>
-        <a href="https://www.instagram.com/grzesiekmarekjurek/"><img src="instagram.svg" alt=""></a>
-      </div>
-    </header>
+
   </div>
 </template>
 
 <script>
 
 //import ThemeSwitch from "~/components/ThemeSwitch.vue";
-
+import PageHeader from "~/components/PageHeader.vue";
 export default {
   components: {
-    //ThemeSwitch
+    PageHeader
   },
   transition: 'fade'
 }
@@ -34,5 +22,9 @@ export default {
 
 <style lang="scss">
 @import "~/assets/_all.scss";
-
+.main {
+  width: 1040px;
+  margin: 0 auto;
+  padding: 5em 0;
+}
 </style>

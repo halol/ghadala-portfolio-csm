@@ -1,21 +1,21 @@
 <template>
-<div>
     <picture>
         <source v-for="(size, index) in sizes" v-bind:key="index"
             v-bind:srcset="originalImage(size)" v-bind:media="formatMedia(size)" />
         <img 
             v-bind:src="originalImage(1280)" v-bind:alt="title" />
     </picture>
-</div>
-
-    
 </template>
 
 <script>
 
-//let 
-
 export default {
+
+// https://res.cloudinary.com/decakckik/image/upload/v1575217538/renders/kite01_jin6sh.png
+// https://res.cloudinary.com/decakckik/image/upload/v1575146711/art/IMG_20191030_102710_qrf5sh.jpg
+
+//https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf2_h53dlt.png
+
     props: {
         image: String,
         title: {
@@ -28,7 +28,8 @@ export default {
             sizes: [480, 960, 1280],
             host: "https://res.cloudinary.com/decakckik/image/upload/c_scale%2Cw_",
             v: "/v1575134125/",
-            urls: []
+            urls: [],
+            folder: ""
         }
     },
     methods: {

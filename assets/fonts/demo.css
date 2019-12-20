@@ -1,0 +1,10 @@
+    @font-face{
+        font-family:"Gilroy W00 Light";
+        src:url("Fonts/5538947/d4d77b00-ccba-4506-94a0-c90613e04292.eot?#iefix");
+        src:url("Fonts/5538947/d4d77b00-ccba-4506-94a0-c90613e04292.eot?#iefix") format("eot"),url("Fonts/5538947/10dab18c-5820-4bec-914f-96252d66819f.woff2") format("woff2"),url("Fonts/5538947/3cbf7bc2-b151-4d39-9dec-4336ac098a9e.woff") format("woff"),url("Fonts/5538947/1deaea41-5541-4484-ac60-9b7ffff5ead3.ttf") format("truetype");
+    }
+    @font-face{
+        font-family:"Gilroy W00 ExtraBold";
+        src:url("Fonts/5538961/ddfcdab4-f6ee-4cec-bfa6-2e4fa5a22a76.eot?#iefix");
+        src:url("Fonts/5538961/ddfcdab4-f6ee-4cec-bfa6-2e4fa5a22a76.eot?#iefix") format("eot"),url("Fonts/5538961/f1d392e1-7817-4e01-a563-9c1883c59446.woff2") format("woff2"),url("Fonts/5538961/a99e1d44-e11f-45cb-9323-bf6d93dd64dc.woff") format("woff"),url("Fonts/5538961/68773a15-f20a-4bd2-a495-5d5bff5848b5.ttf") format("truetype");
+    }

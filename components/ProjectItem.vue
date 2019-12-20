@@ -1,63 +1,51 @@
 <template>
-    <div class="project-item">
-        <figure class="mockup">
-            <!-- Sqaure -->
-            <!-- <img src="screen.png" alt=""> -->
-             <img src="screen.png" />
-        </figure>
-        <div class="caption">
-            <!-- Free -->
-            <p class="title">Project title</p>
-            <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
+    <div class="work-item">
+       <div class="description">
+            <h3>Project name</h3>
+            <p class="short">Lorem ipsum dolor sit amet consectetur adipisicing elit. A eligendi porro eum accusantium repellendus et doloribus ullam assumenda quisquam voluptas nisi iste dicta ab, molestias provident dolorum corporis esse vel?</p>
+            <p class="year">2018</p>
+       </div>
+       <div class="mockup">
+           <show-image></show-image>
+       </div>
     </div>
 </template>
 
 <script>
+import ShowImage from "~/components/ShowImage.vue";
 export default {
-    props: ['number']
+    components: {
+        ShowImage
+    }
+    //
 }
 </script>
 
-<style lang="scss">
-.project-item {
-    display: flex;
-    flex-direction: column;
-}
 
-.mockup {
-    background: #F7F7F7;
-    display: flex;
-    align-content: center;
-    text-align: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    &:after {
-        content: "";
-        padding-bottom: 100%;
-        display: block;
-    }
-    img {
-        position: absolute;
-        //top: 64px;
-        top: 4em;
-        width: 70%;
-        height: autol
+<style lang="scss" scoped>
+@import "~assets/variables.scss";
+
+.work-item {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    grid-template-rows: 460px;
+    grid-template-areas: "description mockup";
+    grid-column-gap: 48px;
+    &:not(:last-child) {
+        margin-bottom: 4em;
     }
 }
 
-.caption {
-    font-size: 0.9em;
-    margin-top: 1em;
-    .title {
-        font-weight: 600;
-        font-size: 1em;
-        margin-bottom: 4px;
-    }
-    .description {
-        font-weight: 400;
-        color: grey;
-    }
+.description { grid-area: description; }
+
+.mockup { 
+    grid-area: mockup;
+    background: $light-gray;
+}
+
+.year {
+    font-family: $bold-font;
+    color: $grey;
 }
 </style>

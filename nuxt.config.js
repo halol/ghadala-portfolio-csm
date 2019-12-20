@@ -59,8 +59,6 @@ export default {
     preset: 'default',
     breaks: true,
     html: true
-
-
   },
   /*
   ** Axios module configuration

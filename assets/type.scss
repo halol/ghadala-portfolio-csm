@@ -1,13 +1,13 @@
 @import "variables.scss";
 
-html {font-size: 17px;}
+html {font-size: 18px;}
 body {
-  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, Roboto, Helvetica, Arial, sans-serif;
+  font-family: $light-font;
 }
 p {
   font-style: normal;
   font-weight: normal;
-  font-size: 17px;
+  //font-size: 17px;
   line-height: 150%;
   //color: #4F4F4F;
   margin-bottom: 1.25em;
@@ -23,12 +23,13 @@ p {
 
 
 h1, h2, h3, h4, h5 {
+  font-family: $bold-font;
   margin: 2.75rem 0 1rem;
   //font-family: 'Poppins', sans-serif;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  color: $header-color;
+  //color: $header-color;
 }
 
 h1 {
@@ -84,3 +85,5 @@ a {
     color: $link-active;
   }
 }
+
+

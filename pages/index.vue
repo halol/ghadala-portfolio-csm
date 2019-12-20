@@ -1,15 +1,23 @@
 <template lang="html">
-  <div class="home">
-    <h1 class="hero">{{siteInfo.sitedescription}}</h1>  
+  <div class="page">
+    <div class="hero-section">
+      <h1 class="hero">{{siteInfo.sitedescription}}</h1>
+    </div>
+    
+    <recent-work/>
   </div>
 </template>
 
 <script>
+
+import RecentWork from "~/components/RecentWork.vue"
+
+
 export default {
+  components: {
+    RecentWork
+  },
   computed: {
-    blogPosts() {
-      return this.$store.state.blogPosts;
-    },
     siteInfo() {
       return this.$store.state.siteInfo;
     }
@@ -18,7 +26,5 @@ export default {
 }
 </script>
 <style lang="scss">
-  .hero {
-    margin-top: 2em;
-  }
+
 </style>
