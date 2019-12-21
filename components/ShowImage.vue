@@ -1,13 +1,13 @@
 <template>
-    <picture>
-        <source v-for="(size, index) in sizes" v-bind:key="index"
-            v-bind:srcset="originalImage(size)" v-bind:media="formatMedia(size)" />
-        <img 
-            v-bind:src="originalImage(1280)" v-bind:alt="title" />
-    </picture>
+    <div>
+      <img :src="getImage" :alt="title">
+       
+    </div>
 </template>
 
 <script>
+import cloudinary from 'cloudinary-core';
+const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'decakckik'});
 
 export default {
 
@@ -17,7 +17,10 @@ export default {
 //https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf2_h53dlt.png
 
     props: {
-        image: String,
+        image: {
+            type: String
+        },
+        height: Number,
         title: {
             type: String,
             default: 'Original'
@@ -26,30 +29,38 @@ export default {
     data: function() {
         return {
             sizes: [480, 960, 1280],
-            host: "https://res.cloudinary.com/decakckik/image/upload/c_scale%2Cw_",
-            v: "/v1575134125/",
+            // host: "https://res.cloudinary.com/decakckik/image/upload/c_scale%2Cw_",
+            // v: "/v1575134125/",
             urls: [],
-            folder: ""
+            // cloudUrls: [],
+            // folder: ""
         }
     },
     methods: {
-        buildLinks: function() {
-            let sizesThis = this.sizes;
-            for (let i = 0; i < sizesThis.length; i++) {
-                let urlFormat = this.host + sizesThis[i] + this.v + this.image;
-                let sizeItem = sizesThis[i];
-                this.urls.push({urlFormat, sizeItem })
-            }
-        },
         formatMedia: function(size) {
             return "(max-width:" + size + "px)";
         },
-        originalImage: function(size) {
-            return  this.host + size + this.v + this.image;
+        buildUrls: function() {
+            let sizes = this.sizes;
+            for (let i = 0; i < sizes.length; i++) {
+                let url = cloudinaryCore.url('renders/golf2_h53dlt.png', {width: size, crop: 'scale'});
+                let size = sizes[i];
+                this.urls.push({url, size})
+            }
+        }
+        
+    },
+    computed: {
+        // cloudinary: function() {
+        //     return cloudinaryCore.url(this.image, {width: 300, crop: 'scale'});
+        // }
+        getImage: function() {
+            return cloudinaryCore.url(this.image, {height: this.height, crop: 'scale'});
         }
     },
     beforeMount() {
-        this.buildLinks()
+        this.buildUrls()
+        
     }
 }
 </script>

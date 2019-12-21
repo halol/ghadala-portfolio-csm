@@ -9,6 +9,7 @@ var dynamicRoutes = getDynamicPaths({
   '/art': 'art/*.json'
 });
 
+
 console.log(dynamicRoutes);
 
 export default {
@@ -44,6 +45,10 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+      {
+        src: '~/plugins/cloudinary.js',
+        mode: 'client'
+      }
   ],
 
   /*

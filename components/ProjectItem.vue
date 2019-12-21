@@ -6,7 +6,7 @@
             <p class="year">2018</p>
        </div>
        <div class="mockup">
-           <show-image></show-image>
+           <show-image image="renders/golf2_h53dlt.png" height="400"></show-image>
        </div>
     </div>
 </template>
@@ -42,6 +42,9 @@ export default {
 .mockup { 
     grid-area: mockup;
     background: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .year {
