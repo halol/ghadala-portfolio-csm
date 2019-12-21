@@ -3,11 +3,11 @@
         <div class="main">
             <h1>Get in touch.</h1>
             <nav>
-                <nuxt-link to="/">LinkedIn</nuxt-link>
-                <nuxt-link to="/">Behance</nuxt-link>
-                <nuxt-link to="/">Dirbbble</nuxt-link>
-                <nuxt-link to="/">Medium</nuxt-link>
-                <nuxt-link to="/">Instagram</nuxt-link>
+                <a target="_blank" href="https://www.linkedin.com/in/grzegorzhadala/">LinkedIn</a>
+                <a target="_blank" href="https://www.behance.net/greghadala">Behance</a>
+                <a target="_blank" href="https://dribbble.com/grzegorzghadala">Dribbble</a>
+                <a target="_blank" href="https://medium.com/@grzegorzhadala">Medium</a>
+                <a target="_blank" href="https://www.instagram.com/grzesiekmarekjurek/">Instagram</a>
             </nav>
         </div>
         <!-- <span class="page-tit">Grzegorz Hadala</span>
@@ -20,7 +20,6 @@
 
 <script>
 export default {
-    
 }
 </script>
 
@@ -28,7 +27,7 @@ export default {
 <style lang="scss">
 @import "~assets/variables.scss";
     footer {
-        padding: 48px;
+        //padding: 48px;
         display: flex;
         font-size: 20px;
         font-family: $bold-font;

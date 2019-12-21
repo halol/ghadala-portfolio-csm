@@ -25,8 +25,11 @@ export default {
 <style lang="scss">
 @import "~/assets/_all.scss";
 .main {
-  width: 1040px;
-  margin: 0 auto;
+  //width: 1040px;
+  margin: 0 14vw;
   padding: 5em 0;
+  @media screen and (max-width: 1000px) {
+    margin: 0 7vw;
+  }
 }
 </style>

@@ -1,7 +1,7 @@
 <template>
     <div class="work-item">
        <div class="description">
-            <nuxt-link :to=work._path><h3>{{work.description}}</h3></nuxt-link>
+            <nuxt-link :to=work._path><h4>{{work.description}}</h4></nuxt-link>
             <p class="short">{{work.title}}</p>
             <p class="year">{{work.year}}</p>
        </div>
@@ -40,15 +40,19 @@ export default {
 @import "~assets/variables.scss";
 
 .work-item {
-    //width: 100%;
-    // display: grid;
-    // grid-template-columns: 1fr minmax(65%, 65%);
-    // grid-template-rows: 460px;
-    // grid-template-areas: "description mockup";
-    // grid-column-gap: 48px;
     display: flex;
+    flex-direction: row;
     &:not(:last-child) {
         margin-bottom: 4em;
+    }
+    @media screen and (max-width: 720px) {
+        flex-direction: column;
+        .description, .mockup {
+            width: 100%;
+        }
+        .description {
+            display: none;
+        }
     }
 }
 
@@ -62,7 +66,10 @@ export default {
     grid-area: mockup;
     background: $light-gray;
     width: 56%;
-    //height: 460px;
+    display: flex;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
     
 }
 .image-link {

@@ -3,7 +3,8 @@
     <div class="description">
           <a class="back-link" @click="$router.back()"><img class="back-arrow" src="~/static/back-arrow.svg"> <span>Back to work</span></a>
           <h3>{{description}}</h3>
-          <p>{{title}}</p>
+          <p class="title">{{title}}</p>
+          <p class="year">{{year}}</p>
           <div class="body" v-html="$md.render(body)"/>
     </div>
     <div class="mockups">
@@ -27,7 +28,8 @@ export default {
       body: work.body,
       cover: work.cover,
       layout: work.layout,
-      mockups: work.mockups
+      mockups: work.mockups,
+      year: work.year
     };
   },
   //transition: "fade",
@@ -58,8 +60,21 @@ $padding: 3em;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "description mockups";
+  @media screen and (max-width: 720px) {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+    position: absolute;
+    .mockups {
+      height: auto;
+    }
+  }
 }
-
+.year {
+    font-family: $bold-font;
+    color: $grey;
+}
 .description { 
   grid-area: description;
   padding: $padding;  

@@ -1,6 +1,6 @@
 <template>
     <header>
-        <span class="page-tit">Grzegorz Hadala</span>
+        <span class="page-tit">Grzegorz Hadala—Product Designer</span>
         <nav>
             <nuxt-link to="/">Start here</nuxt-link>
             <nuxt-link to="/work">Work</nuxt-link>

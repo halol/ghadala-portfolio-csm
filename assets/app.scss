@@ -4,7 +4,9 @@ body {
   color: $black;
   background: $main-background;
 }
-
+::selection {
+  background: lighten($blue, 40%);
+}
 img {
   vertical-align: bottom;
 }
