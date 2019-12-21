@@ -1,8 +1,5 @@
 <template>
-    <div>
-      <img :src="getImage" :alt="title">
-       
-    </div>
+    <div class="image" :style="parseStyle"></div>
 </template>
 
 <script>
@@ -20,11 +17,9 @@ export default {
         image: {
             type: String
         },
-        height: Number,
-        title: {
-            type: String,
-            default: 'Original'
-        }
+        height: String,
+        folder: String,
+        title: String
     },
     data: function() {
         return {
@@ -36,35 +31,48 @@ export default {
             // folder: ""
         }
     },
-    methods: {
-        formatMedia: function(size) {
-            return "(max-width:" + size + "px)";
-        },
-        buildUrls: function() {
-            let sizes = this.sizes;
-            for (let i = 0; i < sizes.length; i++) {
-                let url = cloudinaryCore.url('renders/golf2_h53dlt.png', {width: size, crop: 'scale'});
-                let size = sizes[i];
-                this.urls.push({url, size})
-            }
-        }
+    // methods: {
+    //     formatMedia: function(size) {
+    //         return "(max-width:" + size + "px)";
+    //     },
+    //     buildUrls: function() {
+    //         let sizes = this.sizes;
+    //         let path = this.folder + '/' + this.image;
+    //         for (let i = 0; i < sizes.length; i++) {
+    //             let url = cloudinaryCore.url(path, {width: size, crop: 'scale', secure: true});
+    //             let size = sizes[i];
+    //             this.urls.push({url, size})
+    //         }
+    //     }
         
-    },
+    // },
     computed: {
-        // cloudinary: function() {
-        //     return cloudinaryCore.url(this.image, {width: 300, crop: 'scale'});
-        // }
+        parseStyle: function() {
+            let path = this.folder + '/' + this.image;
+            let cloud = cloudinaryCore.url(path, {height: this.parseHeight, crop: 'scale'});
+            return 'background-image: url('+cloud+'); background-repeat: no-repeat; background-size: contain; background-position: center center;';
+        },
+        getTitle: function() {
+            return this.title;
+        },
+        parseHeight: function(height) {
+            return parseInt(this.height, 10);
+        },
         getImage: function() {
-            return cloudinaryCore.url(this.image, {height: this.height, crop: 'scale'});
+            let path = this.folder + '/' + this.image;
+            return cloudinaryCore.url(path, {height: this.parseHeight, crop: 'scale'});
         }
     },
     beforeMount() {
-        this.buildUrls()
-        
+        // this.buildUrls()
     }
 }
 </script>
 
 <style lang="scss">
-    
+    .image {
+        height: inherit;
+        width: 100%;
+        transition: all 0.25s ease;
+    }
 </style>

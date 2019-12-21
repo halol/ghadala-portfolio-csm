@@ -24,6 +24,10 @@ export default {
         font-size: 20px;
         font-family: $bold-font;
         justify-content: space-between;
+        position: sticky;
+        // top: 0;
+        // background: #fff;
+        // z-index: 999;
     }
     nav {
         a {

@@ -17,7 +17,7 @@ media_library:
   config:
     cloud_name: decakckik
     api_key: 695384476349563
-    output_filename_only: false
+    output_filename_only: true
     config:
       default_transformations:
         -   - fetch_format: auto

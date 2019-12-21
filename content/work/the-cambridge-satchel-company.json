@@ -2,12 +2,12 @@
   "title": "The Cambridge Satchel Company",
   "show": true,
   "description": "Redesign proposal.",
-  "cover": "https://res.cloudinary.com/decakckik/image/upload/v1575217537/renders/cambridge01_zbusop.png",
+  "cover": "cambridge01_zbusop.png",
   "year": 2013,
   "body": "Some text",
   "layout": true,
   "mockups": {
-    "mockup1": "https://res.cloudinary.com/decakckik/image/upload/v1575217537/renders/cambridge02_ltdocm.png",
-    "mockup2": "https://res.cloudinary.com/decakckik/image/upload/v1575217537/renders/cambridge03_lfcvsd.png"
+    "mockup1": "cambridge02_ltdocm.png",
+    "mockup2": "cambridge03_lfcvsd.png"
   }
 }

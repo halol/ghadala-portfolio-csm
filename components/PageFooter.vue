@@ -1,10 +1,20 @@
 <template>
     <footer>
-        <span class="page-tit">Grzegorz Hadala</span>
+        <div class="main">
+            <h1>Get in touch.</h1>
+            <nav>
+                <nuxt-link to="/">LinkedIn</nuxt-link>
+                <nuxt-link to="/">Behance</nuxt-link>
+                <nuxt-link to="/">Dirbbble</nuxt-link>
+                <nuxt-link to="/">Medium</nuxt-link>
+                <nuxt-link to="/">Instagram</nuxt-link>
+            </nav>
+        </div>
+        <!-- <span class="page-tit">Grzegorz Hadala</span>
         <nav>
             <nuxt-link to="/">Work</nuxt-link>
             <nuxt-link to="/about">About</nuxt-link>
-        </nav>
+        </nav> -->
     </footer>
 </template>
 

@@ -2,14 +2,14 @@
   "title": "Your Golf Manager",
   "show": true,
   "description": "Managing your golf skills with ease.",
-  "cover": "https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf2_h53dlt.png",
+  "cover": "golf2_h53dlt.png",
   "year": 2015,
   "body": "Test",
   "layout": true,
   "mockups": {
-    "mockup1": "https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf1_fb694w.png",
-    "mockup2": "https://res.cloudinary.com/decakckik/image/upload/v1575223606/renders/golf-app-01_eflt7x.png",
-    "mockup3": "https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf-app-02_akdn36.png",
-    "mockup4": "https://res.cloudinary.com/decakckik/image/upload/v1575223606/renders/golf-app-03_vx84xq.png"
+    "mockup1": "golf1_fb694w.png",
+    "mockup2": "golf-app-01_eflt7x.png",
+    "mockup3": "golf-app-02_akdn36.png",
+    "mockup4": "golf-app-03_vx84xq.png"
   }
 }

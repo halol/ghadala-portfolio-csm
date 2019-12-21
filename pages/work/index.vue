@@ -1,38 +1,16 @@
 <template>
-    <div class="work-grid">
-        <div class="grid-item" 
-            v-for="work in orderedWorks" 
-            v-bind:key="work.name"
-            v-bind:class="[work.layout ? 'is-full' : 'is-half']"
-            >
-            
-                <div class="project-item">
-                    <n-link :to=work._path class="title">
-                    <figure class="mockup">
-                        <!-- Sqaure -->
-                        <!-- <img src="screen.png" alt=""> -->
-                        <img v-bind:src="work.cover" />
-                    </figure>
-                    </n-link>
-                    <div class="caption">
-                        <!-- Free -->
-                        <n-link :to=work._path class="title">{{work.title}}</n-link>
-                        <p class="description">{{work.description}}</p>
-                        
-                    </div>
-                </div>
-            
-        </div>
+    <div class="work">
+        <project-item 
+            v-for="(work, index) in orderedWorks" 
+            v-bind:key="index"
+            v-if="work.show"
+            :work="work"
+            />
     </div>
 </template>
 
 <script>
-// TODO
-// - import ShowImage
-// Inject folder name
-
-
-import PageInfo from '~/components/PageInfo.vue'
+import ProjectItem from "~/components/ProjectItem";
 import _ from 'lodash';  
 
 export default {
@@ -45,7 +23,7 @@ export default {
     }
   },
   components: {
-      PageInfo
+      ProjectItem
   },
   transition: 'fade'
 }

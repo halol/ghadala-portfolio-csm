@@ -10,7 +10,7 @@ img {
 }
 
 * {
-  outline: 1px solid red;
+  //outline: 1px dotted rgba(red, 0.1);
 }
 
 .sticky {
@@ -22,7 +22,6 @@ img {
     top: 0;
   }
 }
-
 
 // .layout {
 //   height: calc(100vh - (6em));

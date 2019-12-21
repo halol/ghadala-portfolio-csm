@@ -2,12 +2,12 @@
   "title": "Disc Museum",
   "show": true,
   "description": "TBD",
-  "cover": "https://res.cloudinary.com/decakckik/image/upload/v1575217538/renders/discmuseum01_aoyxkw.png",
+  "cover": "discmuseum01_aoyxkw.png",
   "year": 2016,
   "body": "Classical music library.",
   "layout": false,
   "mockups": {
-    "mockup1": "https://res.cloudinary.com/decakckik/image/upload/v1575217538/renders/discmuseum02_wozny3.png",
-    "mockup2": "https://res.cloudinary.com/decakckik/image/upload/v1575217538/renders/discmuseum04_ap8nwa.png"
+    "mockup1": "discmuseum02_wozny3.png",
+    "mockup2": "discmuseum04_ap8nwa.png"
   }
 }

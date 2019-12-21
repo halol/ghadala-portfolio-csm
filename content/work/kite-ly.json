@@ -2,14 +2,14 @@
   "title": "Kite.ly",
   "show": true,
   "description": "Mobile and web SDK.",
-  "cover": "https://res.cloudinary.com/decakckik/image/upload/v1575217538/renders/kite01_jin6sh.png",
+  "cover": "kite01_jin6sh.png",
   "year": 2018,
   "body": "My adventure with Kite.ly started in 2017. For almost a year I heave helped to create the best experience for personalising merchandise on the market. This white-label solution drives thousands of online shops around the world.",
   "layout": false,
   "mockups": {
-    "mockup1": "https://res.cloudinary.com/decakckik/image/upload/v1575217539/renders/kite02_foevty.png",
-    "mockup2": "https://res.cloudinary.com/decakckik/image/upload/v1575217540/renders/kite03_qnntel.png",
-    "mockup3": "https://res.cloudinary.com/decakckik/image/upload/v1575217540/renders/kite04_unzr2u.png",
-    "mockup4": "https://res.cloudinary.com/decakckik/image/upload/v1575217539/renders/kite-web-sdk_lgd6o3.png"
+    "mockup1": "kite02_foevty.png",
+    "mockup2": "kite03_qnntel.png",
+    "mockup3": "kite04_unzr2u.png",
+    "mockup4": "kite-web-sdk_lgd6o3.png"
   }
 }

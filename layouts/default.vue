@@ -4,7 +4,7 @@
     <article class="main"> 
       <nuxt class="content" />
     </article>
-
+    <page-footer></page-footer>
   </div>
 </template>
 
@@ -12,9 +12,11 @@
 
 //import ThemeSwitch from "~/components/ThemeSwitch.vue";
 import PageHeader from "~/components/PageHeader.vue";
+import PageFooter from "~/components/PageFooter.vue";
 export default {
   components: {
-    PageHeader
+    PageHeader,
+    PageFooter,
   },
   transition: 'fade'
 }
