@@ -23,7 +23,7 @@ media_library:
         -   - fetch_format: auto
               width: 1280
               quality: auto
-              #crop: scale
+              crop: scale
 
 collections:
   - name: "setup"
@@ -36,15 +36,24 @@ collections:
       fields:
         - {label: Site Name, name: sitename, widget: string}
         - {label: Site Description, name: sitedescription, widget: string}
-    # TODO
-        # - label: "About"
-    #   name: "about"
-    #   format: 'json'
-    #   file: "content/setup/about.json"
-    #   fields:
-    #     - {label: Site Name, name: sitename, widget: string}
-    #     - {label: Site Description, name: sitedescription, widget: string}
-  
+    - label: "About"
+      name: "about"
+      format: 'json'
+      file: "content/setup/about.json"
+      fields:
+        - {label: Headline, name: headline, widget: string }
+        - {label: Body, name: body, widget: markdown }
+        - {label: Image 1, name: image1, widget: image }
+        - {label: Image 2, name: image2, widget: image }
+    - label: "Start here"
+      name: "start"
+      format: 'json'
+      file: "content/setup/start.json"
+      fields:
+        - {label: Headline, name: headline, widget: string }
+        - {label: Body, name: body, widget: markdown }
+        - {label: Image 1, name: image1, widget: image }
+        - {label: Image 2, name: image2, widget: image }
   - name: "work" # Used in routes, e.g., /admin/collections/blog
     label: "Work" # Used in the UI
     identifier_field: title
