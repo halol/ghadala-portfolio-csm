@@ -43,5 +43,8 @@ export default {
     }
     .scroll-top {
         margin-top: 14vw;
+        &:hover {
+            cursor: pointer;
+        }
     }
 </style>

@@ -36,7 +36,7 @@ export default {
     padding-top: 4em;
 }
 .category {
-  font-size: 0.8em;
+  font-size: 1.2em;
   color: $accent;
   font-family: $bold-font;
   text-transform: uppercase;

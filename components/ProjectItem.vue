@@ -1,8 +1,8 @@
 <template>
     <div class="work-item" data-scroll>
        <div class="description">
-            <nuxt-link :to=work._path><h4>{{work.description}}</h4></nuxt-link>
             <p class="short">{{work.title}}</p>
+            <nuxt-link :to=work._path><h4>{{work.description}}</h4></nuxt-link>
             <p class="year">{{work.year}}</p>
        </div>
        <div class="mockup">
@@ -76,6 +76,12 @@ export default {
     grid-area: description;
     width: 40%;
     margin-right: 4%;
+    h4 {
+        margin-top: 0;
+    }
+    p {
+        margin-bottom: 12px;
+    }
 }
 
 .mockup { 

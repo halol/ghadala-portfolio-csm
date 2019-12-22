@@ -24,7 +24,7 @@ export default {
 <style lang="scss">
 
 .body {
-    max-width: 50ch;
+    max-width: 75ch;
     img {
         max-width: 100%;
         height: auto;

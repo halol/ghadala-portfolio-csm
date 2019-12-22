@@ -2,8 +2,8 @@
   <div class="work-details">
     <div class="description">
           <a class="back-link" @click="$router.back()"><img class="back-arrow" src="~/static/back-arrow.svg"> <span>Back to work</span></a>
+          <p class="short">{{title}}</p>
           <h3>{{description}}</h3>
-          <p class="title">{{title}}</p>
           <p class="year">{{year}}</p>
           <div class="body" v-html="$md.render(body)"/>
     </div>
@@ -78,7 +78,10 @@ $padding: 3em;
 }
 .description { 
   grid-area: description;
-  padding: $padding;  
+  padding: $padding;
+  h3 {
+    margin-top: 0;
+  }
 }
 .back-link {
   font-family: $bold-font;
@@ -87,6 +90,7 @@ $padding: 3em;
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  margin-bottom: 3em;
   span {
     margin-top: 2px;
     //margin-left: 4px;
