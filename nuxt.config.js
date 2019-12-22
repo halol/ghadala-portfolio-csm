@@ -22,7 +22,35 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { hid: 'description', name: 'description', content: pkg.description },
+      {
+        property: 'og:title',
+        content: 'Grzegorz Hadala — Product Designer',
+        // following template options are identical
+        // template: '%s - My page',
+        //template: chunk => `${chunk} - My page`,
+        vmid: 'og:title'
+      },
+      {
+        property: 'og:description',
+        content: 'Design thinker',
+        vmid: 'og:description'
+      },
+      {
+        property: 'og:site_name',
+        content: 'Grzegorz Hadala — Product Desiger',
+        vmid: 'og:site_name'
+      },
+      {
+        // data-hid="apple-mobile-web-app-title"
+        property: 'apple-mobile-web-app-title',
+        content: 'Grzegorz Hadala',
+        hid: 'apple-mobile-web-app-title'
+      }, {
+        property: 'mobile-web-app-capable',
+        content: 'Grzegorz Hadala',
+        hid: 'mobile-web-app-capable'
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
