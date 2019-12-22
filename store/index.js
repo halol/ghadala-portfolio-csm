@@ -9,6 +9,9 @@ export const state = () => ({
   siteInfo: [],
   allArt: [],
   allWork: [],
+  aboutPage: [],
+  introPage: [],
+  // TODO INDEX
 });
 
 export const mutations = {
@@ -26,6 +29,12 @@ export const mutations = {
   },
   SET_WORK(state, data) {
     state.allWork = data
+  },
+  SET_ABOUT(state, data) {
+    state.aboutPage = data
+  },
+  SET_INTRO(state, data) {
+    state.introPage = data
   }
 };
 
@@ -36,27 +45,9 @@ export const actions = {
     //await dispatch('getPages')
     await dispatch('getArt')
     await dispatch('getWork')
+    await dispatch('getAboutPage')
+    await dispatch('getIntroPage')
   },
-  // async getBlogPosts({ state, commit }) {
-  //   const context = await require.context('~/content/blog/', false, /\.json$/);
-
-  //   const searchposts = await context.keys().map(key => ({
-  //     ...context(key),
-  //     _path: `/blog/${key.replace('.json', '').replace('./', '')}`
-  //   }));
-
-  //   commit('SET_POSTS', searchposts.reverse())
-  // },
-  // async getPages({ state, commit }) {
-  //   const context = await require.context('~/content/pages/', false, /\.json$/);
-
-  //   const pages = await context.keys().map(key => ({
-  //     ...context(key),
-  //     _path: `/page/${key.replace('.json', '').replace('./', '')}`
-  //   }));
-
-  //   commit('SET_PAGES', pages)
-  // },
   async getWork({ state, commit }) {
     const context = await require.context('~/content/work/', false, /\.json$/);
 
@@ -79,5 +70,13 @@ export const actions = {
   getSiteInfo({ state, commit }) {
     const info = require('~/content/setup/info.json');
     commit('SET_INFO', info)
+  },
+  getAboutPage({ state, commit }) {
+    const about = require('~/content/setup/about.json');
+    commit('SET_ABOUT', about)
+  },
+  getIntroPage({ state, commit }) {
+    const intro = require('~/content/setup/start.json');
+    commit('SET_INTRO', intro)
   }
 };
