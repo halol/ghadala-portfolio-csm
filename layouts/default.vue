@@ -13,6 +13,7 @@
 import PageHeader from "~/components/PageHeader.vue";
 import PageFooter from "~/components/PageFooter.vue";
 export default {
+  scrollToTop: true,
   components: {
     PageHeader,
     PageFooter,
@@ -29,6 +30,8 @@ export default {
   padding: 5em 0;
   @media screen and (max-width: 1000px) {
     margin: 0 7vw;
+    padding-top: 7vw;
+    padding-bottom: 25vw; 
   }
 }
 </style>

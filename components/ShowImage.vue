@@ -24,33 +24,14 @@ export default {
     data: function() {
         return {
             sizes: [480, 960, 1280],
-            // host: "https://res.cloudinary.com/decakckik/image/upload/c_scale%2Cw_",
-            // v: "/v1575134125/",
             urls: [],
-            // cloudUrls: [],
-            // folder: ""
         }
     },
-    // methods: {
-    //     formatMedia: function(size) {
-    //         return "(max-width:" + size + "px)";
-    //     },
-    //     buildUrls: function() {
-    //         let sizes = this.sizes;
-    //         let path = this.folder + '/' + this.image;
-    //         for (let i = 0; i < sizes.length; i++) {
-    //             let url = cloudinaryCore.url(path, {width: size, crop: 'scale', secure: true});
-    //             let size = sizes[i];
-    //             this.urls.push({url, size})
-    //         }
-    //     }
-        
-    // },
     computed: {
         parseStyle: function() {
             let path = this.folder + '/' + this.image;
             let cloud = cloudinaryCore.url(path, {height: this.parseHeight, crop: 'scale'});
-            return 'background-image: url('+cloud+'); background-repeat: no-repeat; background-size: contain; background-position: center center;';
+            return 'background-image: url('+cloud+');';
         },
         getTitle: function() {
             return this.title;
@@ -71,8 +52,12 @@ export default {
 
 <style lang="scss">
     .image {
+        background-repeat: no-repeat; 
+        background-size: contain; 
+        background-position: center center;
         height: inherit;
         width: 100%;
         transition: all 0.25s ease;
+        //padding-bottom: 100%;
     }
 </style>

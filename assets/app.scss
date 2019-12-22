@@ -24,6 +24,14 @@ img {
   //outline: 1px dotted rgba(red, 0.1);
 }
 
+
+button {
+  border: 0;
+  background: 0;
+  padding: 0;
+  margin: 0;
+}
+
 .sticky {
   position: sticky;
   top: 2em;
@@ -33,98 +41,6 @@ img {
     top: 0;
   }
 }
-
-// .layout {
-//   height: calc(100vh - (6em));
-//   display: flex;
-//   flex-direction: column;
-//   //justify-content: space-between;
-// }
-// .space-between { justify-content: space-between; }
-
-// .flex {
-//   // For navigation
-//   display: flex;
-//   justify-content: space-between;
-// }
-
-// .main {
-//   padding-left: 3em;
-//   padding-right: 3em;
-//   padding-top: 3em;
-//   padding-bottom: 6em;
-//   @media screen and (max-width: $max-mobile) {
-//     padding-left: 2em;
-//     padding-right: 2em;
-//     padding-top: 2em;
-//     padding-bottom: 4em;
-//   }
-// }
-
-
-// header {
-//   //padding: 1em 0;
-//   border-top:2px solid $black;
-//   //margin-bottom: -2em;
-//   position: fixed;
-//   //width: calc(100% - 4em);
-//   //left: 2em;
-//   left: 3em;
-//   right: 3em;
-//   height: 3m;
-//   bottom: 0;
-//   background: $main-background;
-//   z-index: 100;
-//   display: flex;
-//   @media screen and (max-width: 414px) {
-//     //background: red;
-//   }
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: row;
-//   justify-content: space-between;
-//   @media screen and (max-width: $max-mobile) {
-//     left: 2em;
-//     right: 2em;
-//   }
-// }
-
-
-// .options {
-//   display: flex;
-//   > * {
-//     &:not(:first-child) {
-//       margin-left: 12px;
-//     }
-//   }
-// }
-// nav {
-//   //font-size: 0.9em;
-//   a {
-//     //margin-right: 4em;
-//     display: inline-flex;
-//     justify-content: center;
-//     align-items: center;
-//     height: 64px;
-//     //padding: 4px;
-//     &:not(:last-child) {
-//       margin-right: 3em;
-//     }
-//     @media screen and (max-width: $max-mobile) {
-      
-//       &:not(:last-child) {
-//         margin-right: .5em;
-//       }
-//     }
-//   }
-// }
-
-
-
-
-
-
 .fade-enter-active, .fade-leave-active {
   transition: all .4s;
   
@@ -146,4 +62,3 @@ img {
   transform: translateX(10px);
   opacity: 0;
 }
-

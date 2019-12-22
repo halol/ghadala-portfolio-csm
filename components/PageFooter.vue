@@ -9,12 +9,18 @@
                 <a target="_blank" href="https://medium.com/@grzegorzhadala">Medium</a>
                 <a target="_blank" href="https://www.instagram.com/grzesiekmarekjurek/">Instagram</a>
             </nav>
+            <button @click="scrollTop" class="scroll-top"><img src="~/static/top.svg" alt=""></button>
         </div>
     </footer>
 </template>
 
 <script>
 export default {
+    methods: {
+        scrollTop: function() {
+            window.scrollTo(0,0);
+        }
+    }
 }
 </script>
 
@@ -34,5 +40,8 @@ export default {
                 margin-right: 32px;
             }
         }
+    }
+    .scroll-top {
+        margin-top: 14vw;
     }
 </style>

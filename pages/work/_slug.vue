@@ -66,6 +66,7 @@ $padding: 3em;
     flex-wrap: nowrap;
     overflow-y: auto;
     position: absolute;
+    bottom: auto;
     .mockups {
       height: auto;
     }

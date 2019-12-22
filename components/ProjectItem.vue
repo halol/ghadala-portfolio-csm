@@ -43,7 +43,7 @@ export default {
     display: flex;
     flex-direction: row;
     &:not(:last-child) {
-        margin-bottom: 4em;
+        margin-bottom: 6em;
     }
     @media screen and (max-width: 720px) {
         flex-direction: column;
@@ -51,7 +51,23 @@ export default {
             width: 100%;
         }
         .description {
-            display: none;
+            //display: none;
+            background: $light-gray;
+            padding: 0 2em;
+            padding-bottom: 1.5em;
+            .short, .year {
+                display: none;
+            }
+        }
+        .mockup {
+            justify-content: flex-start;
+            .image {
+                //transform: scale(0.98);
+            }
+            padding-bottom: 2em;
+        }
+        &:not(:last-child) {
+            margin-bottom: 7vw;
         }
     }
 }
