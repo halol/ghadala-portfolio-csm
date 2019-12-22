@@ -82,6 +82,9 @@ $padding: 3em;
   h3 {
     margin-top: 0;
   }
+  @media screen and (max-width: 720px) {
+    padding: 7vw;
+  }
 }
 .back-link {
   font-family: $bold-font;

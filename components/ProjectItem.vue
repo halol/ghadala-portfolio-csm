@@ -58,6 +58,9 @@ export default {
             .short, .year {
                 display: none;
             }
+            h4 {
+                margin: 2.75rem 0 1rem;
+            }
         }
         .mockup {
             justify-content: flex-start;
