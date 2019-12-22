@@ -48,7 +48,12 @@ export default {
       {
         src: '~/plugins/cloudinary.js',
         mode: 'client'
+      },
+      {
+        src: "~/plugins/locomotiveScroll.js",
+        mode: "client"
       }
+      // TODO: GA.js
   ],
 
   /*

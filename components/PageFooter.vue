@@ -10,11 +10,6 @@
                 <a target="_blank" href="https://www.instagram.com/grzesiekmarekjurek/">Instagram</a>
             </nav>
         </div>
-        <!-- <span class="page-tit">Grzegorz Hadala</span>
-        <nav>
-            <nuxt-link to="/">Work</nuxt-link>
-            <nuxt-link to="/about">About</nuxt-link>
-        </nav> -->
     </footer>
 </template>
 

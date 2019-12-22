@@ -1,5 +1,5 @@
 <template>
-    <div class="work-item">
+    <div class="work-item" data-scroll>
        <div class="description">
             <nuxt-link :to=work._path><h4>{{work.description}}</h4></nuxt-link>
             <p class="short">{{work.title}}</p>
@@ -80,10 +80,12 @@ export default {
     justify-content: center;
     //overflow: hidden;
     padding: 2em;
-    
+    .image {
+        transform: scale(1.025);
+    }
     &:hover {
         .image {
-            transform: scale(1.025);
+            transform: scale(1.1);
         }
     }
 }

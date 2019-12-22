@@ -10,6 +10,8 @@
 </template>
 
 <script>
+
+
 import ProjectItem from "~/components/ProjectItem";
 import _ from 'lodash';  
 
@@ -25,7 +27,7 @@ export default {
   components: {
       ProjectItem
   },
-  transition: 'fade'
+  transition: 'fade',
 }
 </script>
 
