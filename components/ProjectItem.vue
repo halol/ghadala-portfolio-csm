@@ -1,5 +1,5 @@
 <template>
-    <div class="work-item" data-scroll>
+    <div class="work-item">
        <div class="description">
             <p class="short">{{work.title}}</p>
             <nuxt-link :to=work._path><h4>{{work.description}}</h4></nuxt-link>

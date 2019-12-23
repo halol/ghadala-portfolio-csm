@@ -27,7 +27,7 @@ export default {
   components: {
       ProjectItem
   },
-  transition: 'fade',
+  transition: 'fade'
 }
 </script>
 

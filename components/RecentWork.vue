@@ -9,10 +9,7 @@
 
 
 <script>
-
 import ProjectItem from "~/components/ProjectItem.vue"
-
-
 import _ from 'lodash';
 
 export default {

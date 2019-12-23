@@ -7,12 +7,6 @@ import cloudinary from 'cloudinary-core';
 const cloudinaryCore = new cloudinary.Cloudinary({cloud_name: 'decakckik'});
 
 export default {
-
-// https://res.cloudinary.com/decakckik/image/upload/v1575217538/renders/kite01_jin6sh.png
-// https://res.cloudinary.com/decakckik/image/upload/v1575146711/art/IMG_20191030_102710_qrf5sh.jpg
-
-//https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf2_h53dlt.png
-
     props: {
         image: {
             type: String
@@ -43,9 +37,6 @@ export default {
             let path = this.folder + '/' + this.image;
             return cloudinaryCore.url(path, {height: this.parseHeight, crop: 'scale'});
         }
-    },
-    beforeMount() {
-        // this.buildUrls()
     }
 }
 </script>
@@ -58,6 +49,5 @@ export default {
         height: inherit;
         width: 100%;
         transition: all 0.25s ease;
-        //padding-bottom: 100%;
     }
 </style>

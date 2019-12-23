@@ -28,7 +28,6 @@ export default {
 <style lang="scss">
 @import "~assets/variables.scss";
     footer {
-        //padding: 48px;
         display: flex;
         font-size: 20px;
         font-family: $bold-font;

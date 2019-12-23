@@ -60,7 +60,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#ccc' },
+ loading: { color: 'blue'},
 
   /*
   ** Global CSS
@@ -75,10 +75,6 @@ export default {
       {
         src: '~/plugins/cloudinary.js',
         mode: 'client'
-      },
-      {
-        src: "~/plugins/locomotiveScroll.js",
-        mode: "client"
       }
       // TODO: GA.js
   ],
