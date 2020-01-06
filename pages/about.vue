@@ -1,7 +1,7 @@
 <template>
     <div class="page">
        <!-- <h1>About</h1> -->
-       <h3>{{aboutPage.headline}}</h3>
+       <h1>{{aboutPage.headline}}</h1>
        <div class="body" v-html="$md.render(aboutPage.body)"/>
     </div>
 </template>

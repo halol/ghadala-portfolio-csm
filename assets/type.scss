@@ -3,6 +3,8 @@
 html {font-size: 18px;}
 body {
   font-family: $light-font;
+  font-variant-ligatures: none;
+  line-height: 150%;
 }
 p {
   font-style: normal;
@@ -20,7 +22,9 @@ p {
   }
 }
 
-
+strong {
+  font-family: $bold-font;
+}
 
 h1, h2, h3, h4, h5 {
   font-family: $bold-font;
@@ -64,8 +68,16 @@ small, .text_small {font-size: 0.75em;}
 
 
 ul {
-  list-style: dot;
-  list-style-position: inside;
+  //list-style: dot;
+  margin-left: 1em;
+  //list-style-position: inside;
+  margin-bottom: 1em;
+  li {
+    &:not(:last-child) {
+      margin-bottom: 0.4em;
+      line-height: 150%;
+    }
+  }
 }
 
 
@@ -87,3 +99,10 @@ a {
 }
 
 
+.body {
+  //column-count: 2;
+  //column-gap: 2em;
+  h1, h2, h3, h4 {
+    //margin-top: 0;
+  }
+}
