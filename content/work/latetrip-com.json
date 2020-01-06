@@ -1,9 +1,9 @@
 {
   "title": "Latetrip.com",
   "show": true,
-  "description": "Holiday packages search engine.",
+  "description": "Holiday packages search based on your budget and availability.",
   "cover": "latetrip-macbook-1_1_u5mw05.png",
   "year": 2016,
-  "body": "",
+  "body": "Latetrip.com idea was simple - provide budget per person, choose desired dates and voila! Your perfect holiday package was at the top of the search results. The most challenging part was the Information Architecture: which information is useful for the user to convince them to pick the specific package. We had a lot of fun experimenting with different variants and testing them with users.",
   "layout": true
 }
