@@ -1,13 +1,14 @@
 {
-  "title": "Disc Museum",
-  "show": true,
-  "description": "TBD",
-  "cover": "discmuseum01_aoyxkw.png",
-  "year": 2016,
-  "body": "Classical music library.",
+  "body": "Working on Disc Museum (currently Vialma) was my first attempt to design a music streaming experience where the user can also dive into interesting information and facts about the artists, albums and works. One of the biggest challenges was to map then entire user journey to get users to pay for the subscriptions and the hook models to retain them with the service.",
+  "project_url": "https://www.vialma.com/",
   "layout": false,
   "mockups": {
     "mockup1": "discmuseum02_wozny3.png",
     "mockup2": "discmuseum04_ap8nwa.png"
-  }
+  },
+  "cover": "discmuseum01_aoyxkw.png",
+  "title": "Disc Museum (Vialma)",
+  "description": "Premium classical and jazz music catalog with something extra.",
+  "year": 2016,
+  "show": true
 }
