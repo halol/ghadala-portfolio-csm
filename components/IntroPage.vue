@@ -1,10 +1,10 @@
 <template>
     <div class="intro-page">
-        <p class="category">{{introPage.headline}}</p>
+        
         <!-- <p class="motto">{{introPage.headline}}</p> -->
         <!-- <div class="body" v-html="$md.render(introPage.body)"></div> -->
 
-        <p class="category">I worked with</p>
+        <p class="category">Worked with</p>
         <div class="body companies">
             <ul class="roles">
                 <li class="header"><small>Amsterdam</small></li>
