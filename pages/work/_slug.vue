@@ -20,6 +20,7 @@
 import ShowImage from "~/components/ShowImage.vue";
 
 export default {
+  layout: 'custom',
   async asyncData({ params, app, payload, route, store }) {
     let work = await import(`~/content/work/${params.slug}.json`);
     return {
@@ -40,7 +41,15 @@ export default {
     return {
       folder: "renders"
     }
-  }
+  },
+  // beforeCreate() {
+  //   this.$nextTick().then(() => document.body.classList.add('lock-scroll'))
+  // },
+  // beforeDestroy() {
+  //   this.$nextTick(function() {
+  //     document.body.classList.remove('lock-scroll')
+  //   });
+  // }
 }
 </script>
 
@@ -58,8 +67,9 @@ $padding: 3em;
   background: #fff;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-rows: 100vh;
   grid-template-areas: "description mockups";
+  overflow: hidden;
   @media screen and (max-width: 720px) {
     display: flex;
     flex-direction: column;
@@ -79,6 +89,7 @@ $padding: 3em;
 .description { 
   grid-area: description;
   padding: $padding;
+  overflow-y: auto;
   h3 {
     margin-top: 0;
   }
@@ -117,5 +128,12 @@ $padding: 3em;
   grid-auto-rows: 600px;
   grid-gap: 2em;
   padding: $padding;
+}
+
+.lock-scroll {
+  overflow: hidden;
+  .main {
+    padding: 0 0;
+  }
 }
 </style>

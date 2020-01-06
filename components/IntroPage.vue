@@ -68,6 +68,9 @@ export default {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(2, auto-fit);
     grid-gap: 2em;
+    @media screen and (max-width: 720px) {
+        grid-template-columns: 1fr;
+    }
 }
 li.header small {
     color: $grey;
