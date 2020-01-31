@@ -22,7 +22,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description },
+      { hid: 'description', name: 'description', content: 'Design thinker, artistic soul and a problem solver with pragmatic and holistic approach.' },
       {
         property: 'og:title',
         content: 'Grzegorz Hadala — Product Designer',
@@ -32,8 +32,9 @@ export default {
         vmid: 'og:title'
       },
       {
+        // og:title og:url og:image og:description missing
         property: 'og:description',
-        content: 'Design thinker',
+        content: 'Design thinker, artistic soul and a problem solver with pragmatic and holistic approach.',
         vmid: 'og:description'
       },
       {
@@ -75,7 +76,8 @@ export default {
       {
         src: '~/plugins/cloudinary.js',
         mode: 'client'
-      }
+      },
+      { src: '~plugins/ga.js', mode: 'client' }
       // TODO: GA.js
   ],
 

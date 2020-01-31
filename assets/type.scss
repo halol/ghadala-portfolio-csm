@@ -9,16 +9,12 @@ body {
 p {
   font-style: normal;
   font-weight: normal;
-  //font-size: 17px;
   line-height: 150%;
-  //color: #4F4F4F;
   margin-bottom: 1.25em;
-  //font-weight: 300;
   &.lead {
     font-weight: 300;
     font-size: 1.2em;
     font-style: italic;
-    //font-family: Georgia, 'Times New Roman', Times, serif;
   }
 }
 
@@ -29,11 +25,9 @@ strong {
 h1, h2, h3, h4, h5 {
   font-family: $bold-font;
   margin: 2.75rem 0 1rem;
-  //font-family: 'Poppins', sans-serif;
   font-weight: 600;
   line-height: 1.15;
   letter-spacing: -0.025em;
-  //color: $header-color;
 }
 
 h1 {
@@ -68,9 +62,7 @@ small, .text_small {font-size: 0.75em;}
 
 
 ul {
-  //list-style: dot;
   margin-left: 1em;
-  //list-style-position: inside;
   margin-bottom: 1em;
   li {
     &:not(:last-child) {
@@ -85,24 +77,11 @@ a {
   color: $link-normal;
   text-decoration: none;
   font-weight: 600;
-  // &.active-link {
-  //   color: green;
-  // }
   transition: all 0.25s ease;
   &:hover {
     color: $link-hover;
   }
   &.exact-active-link {
-    //border-bottom: 2px solid $orange;
     color: $link-active;
-  }
-}
-
-
-.body {
-  //column-count: 2;
-  //column-gap: 2em;
-  h1, h2, h3, h4 {
-    //margin-top: 0;
   }
 }

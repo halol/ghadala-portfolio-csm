@@ -21,11 +21,11 @@
             </ul>
             <ul class="roles">
                 <li class="header"><small>Warsaw</small></li>
-                <li><strong>PayU</strong> / Warsaw / Mobile UX&amp;UI Designer</li>
+                <li><strong>PayU</strong> / Mobile UX&amp;UI Designer</li>
                 <li><strong>ASUS</strong> / Visual Designer</li>
                 <li><strong>Cisco</strong> / Visual Designer</li>
                 <li><strong>Orsay</strong> / Visual Designer</li>
-                <li><strong>Pepsico</strong> / Visual Designer</li>
+                <li><strong>PepsiCo</strong> / Visual Designer</li>
             </ul>
         </div>
     </div>

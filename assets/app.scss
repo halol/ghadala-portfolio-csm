@@ -5,7 +5,8 @@ body {
   background: $main-background;
 }
 ::selection {
-  background: lighten($blue, 40%);
+  background: lighten($orange, 1%);
+  color:lighten($orange, 1%);
 }
 
 *,

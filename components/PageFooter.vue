@@ -1,7 +1,7 @@
 <template>
     <footer>
         <div class="main">
-            <h1>Get in touch.</h1>
+            <h2>Get in touch.</h2>
             <nav>
                 <a target="_blank" href="https://www.linkedin.com/in/grzegorzhadala/">LinkedIn</a>
                 <a target="_blank" href="https://www.behance.net/greghadala">Behance</a>
