@@ -3,10 +3,19 @@ body {
   //height: calc(100vh - (6em));
   color: $black;
   background: $main-background;
+
+  @media (prefers-color-scheme: dark) {
+    background: $black;
+    color: #DCE3ED;
+  }
 }
 ::selection {
   background: lighten($orange, 1%);
   color:lighten($orange, 1%);
+}
+
+.scrolltop-icon {
+  fill: red;
 }
 
 *,

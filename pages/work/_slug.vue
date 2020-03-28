@@ -20,7 +20,7 @@
 import ShowImage from "~/components/ShowImage.vue";
 
 export default {
-  layout: 'custom',
+  layout: "custom",
   async asyncData({ params, app, payload, route, store }) {
     let work = await import(`~/content/work/${params.slug}.json`);
     return {
@@ -40,8 +40,8 @@ export default {
   data: function() {
     return {
       folder: "renders"
-    }
-  },
+    };
+  }
   // beforeCreate() {
   //   this.$nextTick().then(() => document.body.classList.add('lock-scroll'))
   // },
@@ -50,7 +50,7 @@ export default {
   //     document.body.classList.remove('lock-scroll')
   //   });
   // }
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -83,10 +83,10 @@ $padding: 3em;
   }
 }
 .year {
-    font-family: $bold-font;
-    color: $grey;
+  font-family: $bold-font;
+  color: $grey;
 }
-.description { 
+.description {
   grid-area: description;
   padding: $padding;
   overflow-y: auto;
@@ -115,13 +115,12 @@ $padding: 3em;
   }
   &:hover {
     cursor: pointer;
-   
   }
 }
 
-.mockups { 
-  grid-area: mockups; 
-  overflow-y: auto; 
+.mockups {
+  grid-area: mockups;
+  overflow-y: auto;
   background: $light-gray;
   display: grid;
   grid-template-columns: 1fr;
@@ -134,6 +133,15 @@ $padding: 3em;
   overflow: hidden;
   .main {
     padding: 0 0;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .work-details {
+    background: $black;
+  }
+  .mockups {
+    background: $black;
   }
 }
 </style>
