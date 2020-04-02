@@ -1,26 +1,58 @@
-<template lang="html">
-  <div class="work-details">
-    <div class="description">
-          <a class="back-link" @click="$router.back()"><img class="back-arrow" src="~/static/back-arrow.svg"> <span>Back to work</span></a>
-          <p class="short">{{title}}</p>
-          <h3>{{description}}</h3>
-          <p class="year">{{year}}</p>
-          <div class="body" v-html="$md.render(body)"/>
-    </div>
-    <div class="mockups">
-          <show-image :image="cover" height="800" :folder="folder" :title="title"></show-image>
-          <show-image 
-          v-for="(mockup, index) in mockups" :key="index"
-          :image="mockup" height="800" :folder="folder" :title="title"></show-image>
-    </div>
+<template>
+  <div class="project-details-parent">
+    <back-button />
+    <section class="section heading">
+      <p>
+        {{title}},
+        <strong>{{year}}</strong>
+      </p>
+      <h1 class="project-title">{{description}}</h1>
+
+      <div class="chips">
+        <info-chip color="primary" label="E-commmm" />
+        <info-chip color="default" label="Web" />
+        <info-chip color="default" label="iOS" />
+        <info-chip color="default" label="Android" />
+      </div>
+
+      <h2>What’s the project about</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusantium cupiditate voluptatibus corrupti. Eaque dignissimos pariatur, voluptates ipsam libero ducimus tempore assumenda mollitia, odit id corrupti dolorem in, incidunt natus.</p>
+    </section>
+    <section class="section gallery">
+      <div class="items scroll">
+        <figure v-for="(image, index) in images" :key="index">
+          <img :src="image" alt="index" />
+        </figure>
+      </div>
+    </section>
+    <section class="section case-study"></section>
   </div>
 </template>
 
 <script>
-import ShowImage from "~/components/ShowImage.vue";
+import InfoChip from "~/components/InfoChip.vue";
+import BackButton from "~/components/BackButton.vue";
+import { galleryScroll } from "~/plugins/hscroll.js";
+
+// => Import scroll.js
 
 export default {
   layout: "custom",
+  components: {
+    InfoChip,
+    BackButton
+  },
+  data() {
+    return {
+      images: [
+        "https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf2_h53dlt.png",
+        "https://res.cloudinary.com/decakckik/image/upload/v1575223607/renders/golf-app-02_akdn36.png",
+        "https://res.cloudinary.com/decakckik/image/upload/v1575223606/renders/golf-app-01_eflt7x.png",
+        "https://res.cloudinary.com/decakckik/image/upload/v1575223606/renders/golf-app-01_eflt7x.png"
+      ],
+      folder: "renders"
+    };
+  },
   async asyncData({ params, app, payload, route, store }) {
     let work = await import(`~/content/work/${params.slug}.json`);
     return {
@@ -33,97 +65,79 @@ export default {
       year: work.year
     };
   },
-  components: {
-    ShowImage
-  },
-  data: function() {
-    return {
-      folder: "renders"
-    };
+  mounted() {
+    galleryScroll();
   }
 };
 </script>
+<style lang="scss">
+.section {
+  padding: 5em 7em;
+  &.gallery {
+    padding: 0;
+    overflow: hidden;
+    min-height: calc(100vh);
+    max-height: calc(100vh);
+    background: t($light-theme, "mockup");
+    @media (prefers-color-scheme: dark) {
+      background: t($dark-theme, "mockup");
+    }
+  }
+  &.case-study {
+    // TBD
+  }
+}
 
-<style lang="scss" scoped>
-$padding: 3em;
+figcaption {
+  background: t($dark-theme, "bg");
+  color: t($dark-theme, "text");
+  border-radius: 999px;
+  padding: 0 24px;
+  height: 32px;
+  line-height: 33px;
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 5em;
+  font-size: 12px;
+  font-family: $font-style-bold;
+  box-shadow: 0 3px 7px rgba($black, 0.05);
+}
+.items {
+  //padding: 5em 7em;
+  //padding: 3em 0;
+  display: flex;
+  position: relative;
+  //overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  transition: all 300ms ease;
+  will-change: transform;
+  user-select: none;
+  cursor: pointer;
+  &.active {
+    cursor: grabbing;
+  }
+}
+figure {
+  padding: 5em;
+  height: calc(100vh);
+  img {
+    max-height: 100%;
+    width: auto;
+  }
+}
 
-.work-details {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: t($light-theme, "bg");
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100vh;
-  grid-template-areas: "description mockups";
-  overflow: hidden;
-  @media screen and (max-width: 720px) {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    overflow-y: auto;
-    position: absolute;
-    bottom: auto;
-    .mockups {
-      height: auto;
+.chips {
+  > * {
+    &:not(:last-child) {
+      margin-right: 16px;
     }
   }
 }
-.year {
-  font-family: $font-style-bold;
-  color: t($light-theme, "medium");
-}
-.description {
-  grid-area: description;
-  padding: $padding;
-  overflow-y: auto;
-  h3 {
-    margin-top: 0;
-  }
-  @media screen and (max-width: 720px) {
-    padding: 7vw;
-  }
-}
-.back-link {
-  font-family: $font-style-bold;
-  height: 24px;
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  margin-bottom: 3em;
-  span {
-    margin-top: 2px;
-  }
-  &:hover {
-    cursor: pointer;
-  }
+.project-title {
+  margin-bottom: 0.6em;
 }
 
-.mockups {
-  grid-area: mockups;
-  overflow-y: auto;
-  background: t($light-theme, "mockup");
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: 600px;
-  grid-gap: 2em;
-  padding: $padding;
-}
-
-.lock-scroll {
-  overflow: hidden;
-  .main {
-    padding: 0 0;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .work-details {
-  }
-  .mockups {
-  }
-}
+// SVG
 </style>

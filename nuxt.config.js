@@ -77,7 +77,8 @@ export default {
       src: '~/plugins/cloudinary.js',
       mode: 'client'
     },
-    { src: '~/plugins/ga.js', mode: 'client' }
+    { src: '~/plugins/ga.js', mode: 'client' },
+    { src: '~/plugins/hscroll.js', mode: 'client' }
     // TODO: GA.js
   ],
 
