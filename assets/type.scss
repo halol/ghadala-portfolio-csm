@@ -1,8 +1,6 @@
-@import "variables.scss";
-
 html {font-size: 18px;}
 body {
-  font-family: $light-font;
+  font-family: $font-style-light;
   font-variant-ligatures: none;
   line-height: 150%;
 }
@@ -11,8 +9,9 @@ p {
   font-weight: normal;
   line-height: 150%;
   margin-bottom: 1.25em;
+  color: t($light-theme, "text");
   @media (prefers-color-scheme: dark) { 
-    color: darken($main-background, 40%);
+    color: t($dark-theme, "text");
   }
   &.lead {
     font-weight: 300;
@@ -22,11 +21,11 @@ p {
 }
 
 strong {
-  font-family: $bold-font;
+  font-family: $font-style-bold;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: $bold-font;
+  font-family: $font-style-bold;
   margin: 2.75rem 0 1rem;
   font-weight: 600;
   line-height: 1.15;
@@ -77,27 +76,34 @@ ul {
 
 
 a {
-  color: $link-normal;
+  color: t($light-theme, "link-normal");
   text-decoration: none;
   font-weight: 600;
   transition: all 0.25s ease;
   &:hover {
-    color: $link-hover;
+    color: t($light-theme, "link-hover");
   }
   &.exact-active-link {
-    color: $link-active;
+    color: t($light-theme, "link-active");
   }
 
   @media (prefers-color-scheme: dark) {
-    color: #393E58;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.25s ease;
+    color: t($dark-theme, "link-normal");
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.25s ease;
   &:hover {
-    color: $link-hover;
+    color: t($dark-theme, "link-hover");
   }
   &.exact-active-link {
-    color: $link-active;
+    color: t($dark-theme, "link-active");
   }
   }
 }
+
+
+
+
+
+
+

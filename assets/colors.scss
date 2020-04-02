@@ -1,0 +1,69 @@
+/* Primary */
+$primary: #173CFF;
+/* Primary Dark */
+$primary-dark: #102AB3;
+/* Primary Light */
+$primary-light: #C9D2FF;
+
+
+/* Secondary */
+$secondary: #FF6B17;
+/* Secondary Dark */
+$secondary-dark: #CC5612;
+/* Secondary Light */
+$secondary-light: #F9EFE6;
+
+
+/* Tones */
+$white: #FFFFFF;
+$black: #050817;
+$medium: #5A607D;
+$light: #F7F8FC;
+
+
+$light-theme: (
+    "bg": $white,
+    "text": $black,
+    "headings": $black,
+    "mobile-header": $primary,
+    "mobile-link-normal": $white,
+    "mobile-link-hover": $primary-light,
+    "mobile-link-active": $primary-dark,
+    "link-normal": $black,
+    "link-hover": $primary,
+    "link-active": $primary,
+    "muted": $medium,
+    "mockup": $secondary-light,
+    "accent": $secondary,
+    "accent-hover": $secondary-dark,
+    "chip": $light,
+    "label": $primary,
+    "category": $primary,
+    "year": $medium
+);
+$dark-theme: (
+    "bg": $black,
+    "text": $light,
+    "headings": $white,
+    "mobile-header": $primary,
+    "mobile-link-normal": $black,
+    "mobile-link-hover": $primary,
+    "mobile-link-active": $primary,
+    "link-normal": $light,
+    "link-hover": $primary,
+    "link-active": $primary,
+    "muted": $medium,
+    "mockup": $black,
+    "accent": $secondary,
+    "accent-hover": $secondary-dark,
+    "chip": $medium,
+    "label": $primary,
+    "category": $black,
+    "year": $medium
+);
+
+
+
+@function t($theme, $key) {
+    @return map-get($theme, $key);
+}

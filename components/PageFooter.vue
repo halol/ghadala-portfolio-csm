@@ -49,11 +49,10 @@ export default {
 
 
 <style lang="scss">
-@import "~assets/variables.scss";
 footer {
   display: flex;
   font-size: 20px;
-  font-family: $bold-font;
+  font-family: $font-style-bold;
   justify-content: space-between;
 }
 nav {

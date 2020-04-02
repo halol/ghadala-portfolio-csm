@@ -72,12 +72,11 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~/assets/variables.scss";
 .intro-page {
   margin-top: 6em;
 }
 .motto {
-  font-family: $light-font;
+  font-family: $font-style-light;
   font-size: 3em;
 }
 .roles {
@@ -102,19 +101,19 @@ export default {
   }
 }
 li.header small {
-  color: $grey;
-  font-family: $bold-font;
+  color: t($light-theme, "muted");
+  font-family: $font-style-bold;
   @media (prefers-color-scheme: dark) {
-    color: $orange;
+    color: t($dark-theme, "muted");
   }
 }
 .label {
-  color: $blue;
+  color: t($light-theme, "label");
   margin-right: 8px;
   font-size: 0.75em;
   line-height: 0.75em;
   text-transform: uppercase;
   border-radius: 0.25em;
-  font-family: $bold-font;
+  font-family: $font-style-bold;
 }
 </style>

@@ -33,7 +33,6 @@ export default {
       year: work.year
     };
   },
-  //transition: "fade",
   components: {
     ShowImage
   },
@@ -42,20 +41,10 @@ export default {
       folder: "renders"
     };
   }
-  // beforeCreate() {
-  //   this.$nextTick().then(() => document.body.classList.add('lock-scroll'))
-  // },
-  // beforeDestroy() {
-  //   this.$nextTick(function() {
-  //     document.body.classList.remove('lock-scroll')
-  //   });
-  // }
 };
 </script>
 
 <style lang="scss" scoped>
-@import "~/assets/variables.scss";
-
 $padding: 3em;
 
 .work-details {
@@ -64,7 +53,7 @@ $padding: 3em;
   left: 0;
   right: 0;
   bottom: 0;
-  background: #fff;
+  background: t($light-theme, "bg");
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100vh;
@@ -83,8 +72,8 @@ $padding: 3em;
   }
 }
 .year {
-  font-family: $bold-font;
-  color: $grey;
+  font-family: $font-style-bold;
+  color: t($light-theme, "medium");
 }
 .description {
   grid-area: description;
@@ -98,7 +87,7 @@ $padding: 3em;
   }
 }
 .back-link {
-  font-family: $bold-font;
+  font-family: $font-style-bold;
   height: 24px;
   display: inline-flex;
   flex-direction: row;
@@ -107,11 +96,6 @@ $padding: 3em;
   margin-bottom: 3em;
   span {
     margin-top: 2px;
-    //margin-left: 4px;
-  }
-  .back-arrow {
-    stroke: $blue;
-    display: none;
   }
   &:hover {
     cursor: pointer;
@@ -121,7 +105,7 @@ $padding: 3em;
 .mockups {
   grid-area: mockups;
   overflow-y: auto;
-  background: $light-gray;
+  background: t($light-theme, "mockup");
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: 600px;
@@ -138,10 +122,8 @@ $padding: 3em;
 
 @media (prefers-color-scheme: dark) {
   .work-details {
-    background: $black;
   }
   .mockups {
-    background: $black;
   }
 }
 </style>

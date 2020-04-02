@@ -61,7 +61,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
- loading: { color: 'blue'},
+  loading: { color: 'blue' },
 
   /*
   ** Global CSS
@@ -73,12 +73,12 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-      {
-        src: '~/plugins/cloudinary.js',
-        mode: 'client'
-      },
-      { src: '~plugins/ga.js', mode: 'client' }
-      // TODO: GA.js
+    {
+      src: '~/plugins/cloudinary.js',
+      mode: 'client'
+    },
+    { src: '~/plugins/ga.js', mode: 'client' }
+    // TODO: GA.js
   ],
 
   /*
@@ -88,6 +88,7 @@ export default {
     '@nuxtjs/markdownit',
     '@nuxtjs/axios', // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
   ],
   markdownit: {
     injected: true,
@@ -100,6 +101,20 @@ export default {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+  },
+
+  // Auto-load common resources
+  styleResources: {
+    scss: [
+      '~/assets/rational.scss',
+      '~/assets/variables.scss',
+      '~/assets/colors.scss',
+      '~/assets/reset.scss',
+      '~/assets/grid.scss',
+      '~/assets/type.scss',
+      '~/assets/app.scss',
+      //'assets/scss/file/_path-two.scss'
+    ]
   },
 
   /*

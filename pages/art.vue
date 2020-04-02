@@ -1,79 +1,114 @@
 <template>
-    <div class="container">
-        <art-tile v-for="art in getArt" v-bind:key="art.slug" :artwork="art" :if="art.show" v-bind:data-category="art.category"></art-tile>
+  <div class="container">
+    <h1>Art</h1>
+    <p
+      class="limit"
+    >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla numquam totam, repudiandae animi ea iure amet ab praesentium voluptatum exercitationem sunt, modi, maxime a quod eaque adipisci ut similique iste!</p>
+    <div class="grid">
+      <art-tile
+        v-for="(art, index) in arts"
+        :key="index"
+        :art="art"
+        :open="false"
+        :index="index + 1"
+        :class="{ featured: index == 0 }"
+      />
+      <!-- <img :src="art" alt="Artwork" /> -->
     </div>
+  </div>
 </template>
 
 <script>
-
-// import PageInfo from '~/components/PageInfo.vue'
-import ArtTile from '~/components/ArtTile.vue'
+import ArtTile from "~/components/ArtTile.vue";
 
 export default {
-    computed: {
-        getArt() {
-            return this.$store.state.allArt;
-        },
-        createLayout() {
-            let artworks = this.$store.state.allArt.length;
-        }
+  layout: "art",
+  computed: {
+    getArt() {
+      return this.$store.state.allArt;
     },
-    components: {
-        ArtTile
-    },
-    transition: 'fade',
-    filters: {
-        capitalize: function (value) {
-            if (!value) return ''
-            value = value.toString()
-            return value.charAt(0).toUpperCase() + value.slice(1)
-        }
+    createLayout() {
+      let artworks = this.$store.state.allArt.length;
     }
+  },
+  components: {
+    ArtTile
+  },
+  data() {
+    return {
+      arts: [
+        {
+          title: "Some title 1",
+          layout: "square",
+          year: "2019",
+          media: "Acrylic",
+          purchase: "https://www.example.com",
+          price: 192.0,
+          url:
+            "https://images.unsplash.com/photo-1584499875098-988f27a5a75b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"
+        },
+        {
+          title: "Some title 1",
+          layout: "square",
+          year: "2019",
+          media: "Acrylic",
+          purchase: "https://www.example.com",
+          price: 1925.0,
+          url:
+            "https://images.unsplash.com/photo-1585354914593-cef5e545f836?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1649&q=80"
+        },
+        {
+          title: "Some title 1",
+          layout: "square",
+          year: "2019",
+          media: "Acrylic",
+          url:
+            "https://images.unsplash.com/photo-1585365341416-307e4fa22402?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        },
+        {
+          title: "Some title 1",
+          layout: "square",
+          year: "2019",
+          media: "Acrylic",
+          purchase: "https://www.example.com",
+          price: 192.0,
+          url:
+            "https://images.unsplash.com/photo-1585369954125-4e4357eb7bd5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=582&q=80"
+        },
+        {
+          title: "Some title 1",
+          layout: "square",
+          year: "2019",
+          media: "Acrylic",
+          purchase: "https://www.example.com",
+          price: 192.0,
+          url:
+            "https://images.unsplash.com/photo-1585396405027-9ac9e836e216?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
+        }
+      ]
+    };
+  },
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
+    }
+  }
 };
 </script>
 
-<style lang="scss">
-@import "~/assets/variables.scss";
-.artwork {
-    display: flex;
-    figure {
-        //padding: .5em;
-        background: $light-gray;
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
-    &:not(:last-child) {
-        margin-bottom: 3em;
-    }
+<style lang="scss" scoped>
+.limit {
+  max-width: 60ch;
 }
-.art-info {
-    margin-top: 3em;
-    margin-left: 2em;
-    font-size: 0.9em;
-    min-width: 200px;
-    .title {
-        font-style: italic;
-        font-weight: 500;
-        margin-bottom: 4px;
-    }
-}
-.container {
+@media screen and (min-width: 600px) {
+  .grid {
+    //outline: 1px solid red;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: auto;
-    grid-gap: 2em;
-    //background: $orange;
-    @media screen and (max-width: $max-mobile) {
-        display: flex;
-        flex-flow: column wrap;
-        .item {
-            margin-bottom: 2em;
-        }
-    }
+    gap: 6rem;
+    grid-template-columns: repeat(auto-fit, minmax(calc(100% / 4), 1fr));
+    grid-auto-rows: auto-fit;
+  }
 }
-
-
-
 </style>

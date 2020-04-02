@@ -1,7 +1,7 @@
 <template>
   <div class="app-wrapper">
     <page-header></page-header>
-    <article class="main">
+    <article class="main wide">
       <nuxt class="content" />
     </article>
     <page-footer></page-footer>
@@ -17,19 +17,28 @@ export default {
   components: {
     PageHeader,
     PageFooter
-  },
-  transition: "fade"
+  }
 };
 </script>
 
 <style lang="scss">
 .main {
+  //width: 1040px;
   margin: 0 14vw;
   padding: 5em 0;
   @media screen and (max-width: 1000px) {
     margin: 0 7vw;
     padding-top: 7vw;
     padding-bottom: 25vw;
+    &.wide {
+      margin: 0 7vw;
+      padding-top: 7vw;
+      padding-bottom: 25vw;
+    }
+  }
+  &.wide {
+    padding: 48px;
+    margin: 0;
   }
 }
 </style>

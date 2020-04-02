@@ -29,16 +29,12 @@ export default {
   },
   beforeMount() {
     console.log(this.work);
-  },
-  computed: {}
-  //
+  }
 };
 </script>
 
 
 <style lang="scss" scoped>
-@import "~assets/variables.scss";
-
 .work-item {
   display: flex;
   flex-direction: row;
@@ -52,14 +48,9 @@ export default {
       width: 100%;
     }
     .description {
-      //display: none;
-      background: $light-gray;
-
       @media (prefers-color-scheme: dark) {
         background: transparent;
       }
-
-      //padding: 0 2em;
       padding-bottom: 1.5em;
     }
     .image-link {
@@ -95,12 +86,12 @@ export default {
 
 .mockup {
   grid-area: mockup;
-  background: $light-gray;
   width: 56%;
   display: flex;
   align-content: center;
   text-align: center;
   justify-content: center;
+  background: t($light-theme, "mockup");
 }
 .image-link {
   width: 100%;
@@ -121,13 +112,13 @@ export default {
 }
 
 .year {
-  font-family: $bold-font;
-  color: $grey;
+  font-family: $font-style-bold;
+  color: t($light-theme, "year");
 }
 
 @media (prefers-color-scheme: dark) {
   .year {
-    color: $orange;
+    color: t($dark-theme, "medium");
   }
   .mockup {
     background: transparent;

@@ -1,17 +1,22 @@
 body {
   //line-height: 1.5;
   //height: calc(100vh - (6em));
-  color: $black;
-  background: $main-background;
+  color: t($light-theme, "text");
+  background: t($light-theme, "bg");
 
   @media (prefers-color-scheme: dark) {
-    background: $black;
-    color: #DCE3ED;
+    color: t($dark-theme, "text");
+    background: t($dark-theme, "bg");
   }
 }
 ::selection {
-  background: lighten($orange, 1%);
-  color:lighten($orange, 1%);
+  background: t($light-theme, "accent");
+  color: t($light-theme, "accent");
+
+  @media (prefers-color-scheme: dark) {
+    background: t($light-theme, "accent");
+    color: t($light-theme, "accent");
+  }
 }
 
 .scrolltop-icon {
@@ -29,11 +34,6 @@ body {
 img {
   vertical-align: bottom;
 }
-
-* {
-  //outline: 1px dotted rgba(red, 0.1);
-}
-
 
 button {
   border: 0;
