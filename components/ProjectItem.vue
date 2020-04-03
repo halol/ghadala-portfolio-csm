@@ -5,7 +5,6 @@
       <nuxt-link :to="work._path">
         <h4>{{work.description}}</h4>
       </nuxt-link>
-      <p class="year">{{work.year}}</p>
     </div>
     <div class="mockup">
       <nuxt-link :to="work._path" class="image-link">
@@ -41,7 +40,7 @@ export default {
   &:not(:last-child) {
     margin-bottom: 6em;
   }
-  @media screen and (max-width: 720px) {
+  @media screen and (max-width: $max-mobile) {
     flex-direction: column-reverse;
     .description,
     .mockup {
@@ -56,8 +55,12 @@ export default {
     .image-link {
       padding: 0;
       .image {
+        transform: scale(1);
         background-size: cover;
         background-position: 0% 0%;
+        &:hover {
+          transform: scale(1);
+        }
       }
     }
     .mockup {
@@ -65,6 +68,7 @@ export default {
       padding-bottom: 2em;
       height: auto;
       transform: scale(1);
+      background: transparent;
     }
     &:not(:last-child) {
       margin-bottom: 12vw;

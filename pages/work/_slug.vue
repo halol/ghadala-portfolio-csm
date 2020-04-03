@@ -21,7 +21,7 @@
     </section>
     <section class="section gallery">
       <div class="items scroll">
-        <figure v-for="(image, index) in images" :key="index">
+        <figure class="figure" v-for="(image, index) in images" :key="index">
           <img :src="image" alt="index" />
         </figure>
       </div>
@@ -117,7 +117,7 @@ export default {
   }
 }
 
-figcaption {
+.figcaption {
   background: t($dark-theme, "bg");
   color: t($dark-theme, "text");
   border-radius: 999px;
@@ -149,7 +149,7 @@ figcaption {
     transform: scale(1.025);
   }
 }
-figure {
+.figure {
   padding: 5em 7em;
   height: 100vh;
   @media screen and (max-width: $max-mobile) {

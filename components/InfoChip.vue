@@ -18,13 +18,12 @@ export default {
   font-family: $font-style-bold;
   display: inline-flex;
   height: 36px;
-  line-height: 38px;
+  line-height: 37px;
   @media screen and (max-width: $max-mobile) {
-    height: 24px;
-    padding: 0 8px;
-    line-height: 24px;
-    > small {
-      font-size: 0.6em;
+    width: 100%;
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 8px;
     }
   }
   // font-size: small
