@@ -5,12 +5,14 @@
 </template>
 
 <script>
-
 export default {
   scrollToTop: true,
-  transition: 'fade'
-}
+  transition: "fade"
+};
 </script>
 
 <style lang="scss">
+.app-wrapper {
+  width: 100%;
+}
 </style>

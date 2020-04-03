@@ -22,8 +22,12 @@ export function galleryScroll() {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX); //scroll-fast
+    const walk = (x - startX) * 1.5; //scroll-fast
     slider.scrollLeft = scrollLeft - walk;
     console.log(walk);
   });
+
+  // get positions of the elements inside
+
+  // function on click on the nav bar to scroll to the desired element
 }

@@ -31,7 +31,7 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .back-button {
   width: 48px;
   height: 48px;
@@ -44,6 +44,7 @@ export default {};
   top: 2em;
   left: 2em;
   transition: all 300ms ease;
+  z-index: 999;
   .svg-stroke {
     transition: all 300ms ease;
     stroke: $medium;
@@ -53,6 +54,17 @@ export default {};
     cursor: pointer;
     .svg-stroke {
       stroke: $black;
+    }
+  }
+}
+@media screen and (max-width: $max-mobile) {
+  .back-button {
+    background: t($light-theme, "text");
+    bottom: 24px;
+    left: 24px;
+    top: auto;
+    .svg-stroke {
+      stroke: t($light-theme, "bg");
     }
   }
 }

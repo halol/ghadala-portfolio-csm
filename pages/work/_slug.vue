@@ -14,9 +14,10 @@
         <info-chip color="default" label="iOS" />
         <info-chip color="default" label="Android" />
       </div>
-
-      <h2>What’s the project about</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusantium cupiditate voluptatibus corrupti. Eaque dignissimos pariatur, voluptates ipsam libero ducimus tempore assumenda mollitia, odit id corrupti dolorem in, incidunt natus.</p>
+      <div class="summary">
+        <h2>What’s the project about</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusantium cupiditate voluptatibus corrupti. Eaque dignissimos pariatur, voluptates ipsam libero ducimus tempore assumenda mollitia, odit id corrupti dolorem in, incidunt natus.</p>
+      </div>
     </section>
     <section class="section gallery">
       <div class="items scroll">
@@ -25,7 +26,11 @@
         </figure>
       </div>
     </section>
-    <section class="section case-study"></section>
+    <section class="section case-study">
+      <div class="body">
+        <div class="markdown" v-html="$md.render(demo)"></div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -33,6 +38,7 @@
 import InfoChip from "~/components/InfoChip.vue";
 import BackButton from "~/components/BackButton.vue";
 import { galleryScroll } from "~/plugins/hscroll.js";
+import demo from "~/static/demo.md";
 
 // => Import scroll.js
 
@@ -50,7 +56,8 @@ export default {
         "https://res.cloudinary.com/decakckik/image/upload/v1575223606/renders/golf-app-01_eflt7x.png",
         "https://res.cloudinary.com/decakckik/image/upload/v1575223606/renders/golf-app-01_eflt7x.png"
       ],
-      folder: "renders"
+      folder: "renders",
+      demo: demo
     };
   },
   async asyncData({ params, app, payload, route, store }) {
@@ -73,18 +80,40 @@ export default {
 <style lang="scss">
 .section {
   padding: 5em 7em;
+  @media screen and (max-width: $max-mobile) {
+    padding: 48px 48px;
+  }
   &.gallery {
     padding: 0;
     overflow: hidden;
-    min-height: calc(100vh);
-    max-height: calc(100vh);
+    width: 100%; //OK
+    height: 100vh; //OK
     background: t($light-theme, "mockup");
+    @media screen and (max-width: $max-mobile) {
+      padding: 0;
+    }
     @media (prefers-color-scheme: dark) {
       background: t($dark-theme, "mockup");
     }
   }
-  &.case-study {
-    // TBD
+}
+
+.body,
+.summary {
+  max-width: 70ch;
+  margin: 0 auto;
+}
+.summary {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.markdown {
+  pre {
+    padding: 16px;
+    background: $light;
+    border-radius: 8px;
+    margin-bottom: 16px;
   }
 }
 
@@ -117,11 +146,15 @@ figcaption {
   cursor: pointer;
   &.active {
     cursor: grabbing;
+    transform: scale(1.025);
   }
 }
 figure {
-  padding: 5em;
-  height: calc(100vh);
+  padding: 5em 7em;
+  height: 100vh;
+  @media screen and (max-width: $max-mobile) {
+    padding: 48px 48px;
+  }
   img {
     max-height: 100%;
     width: auto;
@@ -131,7 +164,7 @@ figure {
 .chips {
   > * {
     &:not(:last-child) {
-      margin-right: 16px;
+      margin-right: 8px;
     }
   }
 }

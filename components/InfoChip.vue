@@ -19,6 +19,14 @@ export default {
   display: inline-flex;
   height: 36px;
   line-height: 38px;
+  @media screen and (max-width: $max-mobile) {
+    height: 24px;
+    padding: 0 8px;
+    line-height: 24px;
+    > small {
+      font-size: 0.6em;
+    }
+  }
   // font-size: small
   &.default {
     background: t($light-theme, "chip-default");
