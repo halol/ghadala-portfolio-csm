@@ -4,7 +4,7 @@
     <!-- <div class="body" v-html="$md.render(introPage.body)"></div> -->
 
     <p class="category">Worked with</p>
-    <div class="body companies">
+    <div class="companies">
       <ul class="roles">
         <li class="header">
           <small>Amsterdam</small>

@@ -101,7 +101,7 @@ export default {
 .body,
 .summary {
   max-width: 70ch;
-  margin: 0 auto;
+  margin: 0 auto auto 0;
 }
 .summary {
   margin-left: 0;
@@ -143,14 +143,14 @@ export default {
   transition: all 300ms ease;
   will-change: transform;
   user-select: none;
-  cursor: pointer;
+  cursor: move;
   &.active {
     cursor: grabbing;
     transform: scale(1.025);
   }
 }
 .figure {
-  padding: 5em 7em;
+  padding: 7em 7em;
   height: 100vh;
   @media screen and (max-width: $max-mobile) {
     padding: 48px 48px;

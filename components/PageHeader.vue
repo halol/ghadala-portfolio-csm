@@ -1,8 +1,8 @@
 <template>
-  <header>
+  <header class="header">
     <span class="page-tit">Grzegorz Hadala—Product Designer</span>
 
-    <nav class="main-menu open">
+    <nav class="main-menu">
       <nuxt-link to="/">Start here</nuxt-link>
       <nuxt-link to="/work">Work</nuxt-link>
       <!-- <nuxt-link to="/art">Art</nuxt-link> -->
@@ -17,7 +17,7 @@ export default {};
 
 
 <style lang="scss">
-header {
+header.header {
   padding: 48px;
   display: flex;
   font-size: 20px;
@@ -26,14 +26,12 @@ header {
   align-items: center;
   width: 100%;
   position: sticky;
-  span {
-    order: 1;
-  }
   @media screen and (max-width: 720px) {
     span {
       display: none;
     }
-    padding: 1vw 7vw;
+    //padding: 1vw 7vw;
+    padding: 0 48px;
     font-size: 0.9em;
     bottom: -1px;
     background: t($light-theme, "mobile-header");
@@ -49,43 +47,28 @@ header {
       display: flex;
       flex-flow: row;
       justify-content: space-evenly;
+      align-items: center;
+      //margin: 0 auto;
       a {
         width: auto;
         margin: 0;
+        &:not(:last-child) {
+          margin-right: 24px;
+        }
+        //background: red;
+        height: 48px;
         text-align: center;
         color: t($light-theme, "mobile-link-normal");
         display: inline-flex;
+        align-items: center;
+        justify-content: center;
         &:hover {
           color: t($light-theme, "mobile-link-hover");
         }
         &.exact-active-link {
-          //border-bottom: 2px solid $orange;
           color: t($light-theme, "mobile-link-active");
         }
       }
-    }
-  }
-}
-nav {
-  order: 3;
-  display: flex;
-  //align-items: center;
-  @media screen and (max-width: 720px) {
-    width: 100%;
-    flex-flow: column;
-    justify-content: flex-start;
-    a {
-      margin: 0;
-      width: 100%;
-      display: block;
-      padding: 3vw 0;
-      border-bottom: 1px solid t($light-theme, "link-hover");
-      margin-top: 1px;
-    }
-  }
-  a {
-    &:not(:last-child) {
-      margin-right: 32px;
     }
   }
 }

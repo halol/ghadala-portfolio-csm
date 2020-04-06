@@ -27,8 +27,8 @@ export default {
   margin: 0 14vw;
   padding: 5em 0;
   @media screen and (max-width: 1000px) {
-    margin: 0 7vw;
-    padding-top: 7vw;
+    margin: 0 48px;
+    padding-top: 48px;
     padding-bottom: 25vw;
   }
 }
