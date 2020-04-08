@@ -86,7 +86,8 @@ export default {
       let path = `renders/${filename}`;
       let url = cloudinaryCore.url(path, {
         height: 800,
-        crop: "scale"
+        crop: "scale",
+        secure: true
       });
       return url;
     }

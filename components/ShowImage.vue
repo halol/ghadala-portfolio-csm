@@ -26,7 +26,8 @@ export default {
       let path = this.folder + "/" + this.image;
       let cloud = cloudinaryCore.url(path, {
         height: this.parseHeight,
-        crop: "scale"
+        crop: "scale",
+        secure: true
       });
       return "background-image: url(" + cloud + ");";
     },
