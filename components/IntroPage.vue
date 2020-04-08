@@ -1,9 +1,7 @@
 <template>
   <div class="intro-page">
-    <!-- <p class="motto">{{introPage.headline}}</p> -->
-    <!-- <div class="body" v-html="$md.render(introPage.body)"></div> -->
-
     <p class="category">Worked with</p>
+
     <div class="companies">
       <div class="roles" v-for="(item, index) in parseWorked" :key="index">
         <div class="header">
@@ -20,9 +18,6 @@
             <div>
               <span class="label" v-if="role.current">Current</span>
             </div>
-            <!-- <div class="role--projects">
-              <small>Projects: {{role.projects}}</small>
-            </div>-->
           </div>
         </div>
       </div>
@@ -49,7 +44,7 @@ export default {
       let grouped = _.chain(this.worked)
         .groupBy("city")
         .toPairs()
-        .map((value, key) => ({ id: key, city: value }))
+        .map(value => ({ city: value }))
         .value();
       return grouped;
     }
@@ -82,7 +77,7 @@ export default {
 }
 .companies {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   grid-template-rows: repeat(2, auto-fit);
   grid-gap: 2em;
   @media screen and (max-width: 720px) {
@@ -104,7 +99,7 @@ export default {
 }
 .jobs {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(1fr, 1fr));
   grid-template-rows: repeat(2, auto-fit);
   grid-row-gap: 24px;
   @media screen and (max-width: 460px) {

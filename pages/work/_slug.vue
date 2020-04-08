@@ -8,25 +8,28 @@
       </p>
       <h1 class="project-title">{{description}}</h1>
 
-      <div class="chips">
+      <div class="chips" v-show="false">
         <info-chip color="primary" label="E-commmm" />
         <info-chip color="default" label="Web" />
         <info-chip color="default" label="iOS" />
         <info-chip color="default" label="Android" />
       </div>
       <div class="summary">
-        <h2>What’s the project about</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusantium cupiditate voluptatibus corrupti. Eaque dignissimos pariatur, voluptates ipsam libero ducimus tempore assumenda mollitia, odit id corrupti dolorem in, incidunt natus.</p>
+        <h2 v-show="false">What’s the project about</h2>
+        <div class="markdown" v-html="$md.render(body)"></div>
+        <p>
+          <small>Content for this project is being written 🐌</small>
+        </p>
       </div>
     </section>
     <section class="section gallery" v-if="images">
       <div class="items scroll">
-        <figure class="figure" v-for="(image, index) in images" :key="index">
-          <img :src="image" alt="index" />
+        <figure class="figure" v-for="(image, index) in mockups" :key="index">
+          <img :src="parseImage(image)" alt="index" />
         </figure>
       </div>
     </section>
-    <section class="section case-study" v-if="demo">
+    <section class="section case-study" v-if="demo" v-show="false">
       <div class="body">
         <div class="markdown" v-html="$md.render(demo)"></div>
       </div>
@@ -39,6 +42,9 @@ import InfoChip from "~/components/InfoChip.vue";
 import BackButton from "~/components/BackButton.vue";
 import { galleryScroll } from "~/plugins/hscroll.js";
 import demo from "~/static/demo.md";
+
+import cloudinary from "cloudinary-core";
+const cloudinaryCore = new cloudinary.Cloudinary({ cloud_name: "decakckik" });
 
 // => Import scroll.js
 
@@ -74,6 +80,16 @@ export default {
   },
   mounted() {
     galleryScroll();
+  },
+  methods: {
+    parseImage(filename) {
+      let path = `renders/${filename}`;
+      let url = cloudinaryCore.url(path, {
+        height: 800,
+        crop: "scale"
+      });
+      return url;
+    }
   }
 };
 </script>
@@ -150,7 +166,7 @@ export default {
   }
 }
 .figure {
-  padding: 7em 7em;
+  padding: 6em 7em;
   height: 100vh;
   @media screen and (max-width: $max-mobile) {
     padding: 48px 48px;
@@ -158,6 +174,7 @@ export default {
   img {
     max-height: 100%;
     width: auto;
+    //max-width: calc(100vw - 96px);
   }
 }
 
