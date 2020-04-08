@@ -5,68 +5,57 @@
 
     <p class="category">Worked with</p>
     <div class="companies">
-      <ul class="roles">
-        <li class="header">
-          <small>Amsterdam</small>
-        </li>
-        <li>
-          <strong>Adyen</strong> / Product Designer
-          <span class="label">Current</span>
-        </li>
-        <li>
-          <strong>Amsterdam UX</strong> / Meetup organizer
-          <span class="label">Current</span>
-        </li>
-      </ul>
-      <ul class="roles">
-        <li class="header">
-          <small>Chicago</small>
-        </li>
-        <li>
-          <strong>TBD</strong> / Head of Product
-        </li>
-      </ul>
-      <ul class="roles">
-        <li class="header">
-          <small>London</small>
-        </li>
-        <li>
-          <strong>Kite.ly</strong> / Senior Designer
-        </li>
-        <li>
-          <strong>ucreate.it</strong> / UX&amp;UI Designer
-        </li>
-      </ul>
-      <ul class="roles">
-        <li class="header">
-          <small>Warsaw</small>
-        </li>
-        <li>
-          <strong>PayU</strong> / Mobile UX&amp;UI Designer
-        </li>
-        <li>
-          <strong>ASUS</strong> / Visual Designer
-        </li>
-        <li>
-          <strong>Cisco</strong> / Visual Designer
-        </li>
-        <li>
-          <strong>Orsay</strong> / Visual Designer
-        </li>
-        <li>
-          <strong>PepsiCo</strong> / Visual Designer
-        </li>
-      </ul>
+      <div class="roles" v-for="(item, index) in parseWorked" :key="index">
+        <div class="header">
+          <small class="label">{{ item.city[0] }}</small>
+        </div>
+        <div class="jobs">
+          <div v-for="role in item.city[1]" :key="role" class="role">
+            <div class="role--company">
+              <strong>{{role.company}}</strong>
+            </div>
+            <div class="role--role">
+              <small>{{role.role}}</small>
+            </div>
+            <div>
+              <span class="label" v-if="role.current">Current</span>
+            </div>
+            <!-- <div class="role--projects">
+              <small>Projects: {{role.projects}}</small>
+            </div>-->
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import demo from "~/demo/worked.json";
+import _ from "lodash";
 export default {
   computed: {
     introPage() {
       return this.$store.state.introPage;
     }
+  },
+  data() {
+    return {
+      worked: demo
+    };
+  },
+  computed: {
+    parseWorked() {
+      let grouped = _.chain(this.worked)
+        .groupBy("city")
+        .toPairs()
+        .map((value, key) => ({ id: key, city: value }))
+        .value();
+      return grouped;
+    }
+  },
+  beforeMount() {
+    console.log(this.parseWorked[0]);
   }
 };
 </script>
@@ -93,27 +82,63 @@ export default {
 }
 .companies {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
   grid-template-rows: repeat(2, auto-fit);
   grid-gap: 2em;
   @media screen and (max-width: 720px) {
     grid-template-columns: 1fr;
   }
 }
-li.header small {
-  color: t($light-theme, "muted");
-  font-family: $font-style-bold;
-  @media (prefers-color-scheme: dark) {
-    color: t($dark-theme, "muted");
-  }
+.header small {
+  color: $medium;
 }
 .label {
-  color: t($light-theme, "label");
+  color: $secondary;
   margin-right: 8px;
-  font-size: 0.75em;
-  line-height: 0.75em;
+  font-size: 0.65em;
+  //line-height: 0.75em;
   text-transform: uppercase;
   border-radius: 0.25em;
   font-family: $font-style-bold;
+  margin-bottom: 12px;
+}
+.jobs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  grid-template-rows: repeat(2, auto-fit);
+  grid-row-gap: 24px;
+  @media screen and (max-width: 460px) {
+    display: block;
+    .role {
+      &:not(:last-child) {
+        margin-bottom: 24px;
+      }
+    }
+  }
+}
+.dot {
+  background: $medium;
+  color: $white;
+  font-family: $font-style-bold;
+  font-size: 8px;
+  border-radius: 999px;
+  text-align: center;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  //line-height: 27px;
+}
+.role--projects small {
+  color: $medium;
+}
+.role--company {
+  display: flex;
+  align-items: center;
+  margin-bottom: -4px;
+  > * {
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
 }
 </style>

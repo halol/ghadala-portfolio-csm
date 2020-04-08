@@ -25,7 +25,7 @@ header.header {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  position: sticky;
+  //position: sticky;
   @media screen and (max-width: 720px) {
     span {
       display: none;
@@ -51,7 +51,7 @@ header.header {
       //margin: 0 auto;
       a {
         width: auto;
-        margin: 0;
+        //margin: 0;
         &:not(:last-child) {
           margin-right: 24px;
         }
@@ -69,6 +69,14 @@ header.header {
           color: t($light-theme, "mobile-link-active");
         }
       }
+    }
+  }
+}
+
+nav.main-menu {
+  a {
+    &:not(:last-child) {
+      margin-right: 24px;
     }
   }
 }

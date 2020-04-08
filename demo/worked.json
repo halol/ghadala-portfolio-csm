@@ -1,0 +1,90 @@
+[
+  {
+    "company": "FreeBird",
+    "role": "Head of Product",
+    "year": 2019,
+    "city": "Chicago",
+    "projects": 1,
+    "current": true
+  },
+  {
+    "company": "Amsterdam UX",
+    "role": "Event Organizer",
+    "year": 2019,
+    "city": "Amsterdam",
+    "projects": 2,
+    "current": true
+  },
+  {
+    "company": "Adyen",
+    "role": "Product Designer",
+    "year": 2018,
+    "city": "Amsterdam",
+    "projects": 10,
+    "current": true
+  },
+  {
+    "company": "Kite.ly",
+    "role": "Senior Designer",
+    "year": 2017,
+    "city": "London",
+    "projects": 4,
+    "current": false
+  },
+  {
+    "company": "ucreate.it",
+    "role": "UX/UI Designer",
+    "year": 2015,
+    "city": "London",
+    "projects": 13,
+    "current": false
+  },
+  {
+    "company": "PayU",
+    "role": "UX/UI Designer",
+    "year": 2014,
+    "city": "Warsaw",
+    "projects": 4,
+    "current": false
+  },
+  {
+    "company": "AdPilot",
+    "role": "Senior Graphic Designer",
+    "year": 2012,
+    "city": "Warsaw",
+    "projects": 5,
+    "current": false
+  },
+  {
+    "company": "Cisco",
+    "role": "Visual Designer",
+    "year": 2009,
+    "city": "Warsaw",
+    "projects": 1,
+    "current": false
+  },
+  {
+    "company": "Asus",
+    "role": "Visual Designer",
+    "year": 2009,
+    "city": "Warsaw",
+    "projects": 1,
+    "current": false
+  },
+  {
+    "company": "Orsay",
+    "role": "Visual Designer",
+    "year": 2009,
+    "city": "Warsaw",
+    "projects": 20,
+    "current": false
+  },
+  {
+    "company": "PepsiCo",
+    "role": "Visual Designer",
+    "year": 2009,
+    "city": "Warsaw",
+    "projects": 1,
+    "current": false
+  }
+]

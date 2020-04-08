@@ -19,14 +19,14 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga accusantium cupiditate voluptatibus corrupti. Eaque dignissimos pariatur, voluptates ipsam libero ducimus tempore assumenda mollitia, odit id corrupti dolorem in, incidunt natus.</p>
       </div>
     </section>
-    <section class="section gallery">
+    <section class="section gallery" v-if="images">
       <div class="items scroll">
         <figure class="figure" v-for="(image, index) in images" :key="index">
           <img :src="image" alt="index" />
         </figure>
       </div>
     </section>
-    <section class="section case-study">
+    <section class="section case-study" v-if="demo">
       <div class="body">
         <div class="markdown" v-html="$md.render(demo)"></div>
       </div>
@@ -162,6 +162,9 @@ export default {
 }
 
 .chips {
+  &::selection {
+    background: transparent;
+  }
   > * {
     &:not(:last-child) {
       margin-right: 8px;
