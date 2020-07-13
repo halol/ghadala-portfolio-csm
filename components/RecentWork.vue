@@ -1,12 +1,15 @@
 <template>
   <div class="recent-work-section">
-    <p class="category">Recent work</p>
+    <p class="category">Recent projects</p>
     <!-- Import a tile component -->
-    <project-item v-for="(work, index) in orderedWorks" v-bind:key="index" v-bind:work="work"></project-item>
-    <nuxt-link to="/work">All works</nuxt-link>
+    <project-item
+      v-for="(work, index) in orderedWorks"
+      v-bind:key="index"
+      v-bind:work="work"
+    ></project-item>
+    <nuxt-link to="/work">All projects</nuxt-link>
   </div>
 </template>
-
 
 <script>
 import ProjectItem from "~/components/ProjectItem.vue";

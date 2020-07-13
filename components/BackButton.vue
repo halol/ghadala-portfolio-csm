@@ -1,5 +1,5 @@
 <template>
-  <div class="back-button" @click="$router.back()">
+  <div class="back-button" @click="goBack">
     <svg
       width="24"
       height="24"
@@ -28,7 +28,18 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  props: ["parent"],
+  methods: {
+    goBack: function() {
+      if (!this.parent) {
+        alert("no parent defined");
+      } else {
+        this.$router.push(`/${this.parent}`);
+      }
+    }
+  }
+};
 </script>
 
 <style lang="scss">

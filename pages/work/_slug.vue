@@ -1,6 +1,6 @@
 <template>
   <div class="project-details-parent">
-    <back-button />
+    <back-button parent="work" />
     <section class="section heading">
       <p>
         {{title}},

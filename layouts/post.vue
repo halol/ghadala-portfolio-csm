@@ -1,9 +1,9 @@
 <template>
   <div class="app-wrapper">
     <page-header></page-header>
-    <article class="main">
-      <nuxt class="content" />
-    </article>
+
+    <nuxt class="content" />
+
     <page-footer></page-footer>
   </div>
 </template>

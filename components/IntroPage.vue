@@ -8,12 +8,12 @@
           <small class="label">{{ item.city[0] }}</small>
         </div>
         <div class="jobs">
-          <div v-for="role in item.city[1]" :key="role" class="role">
+          <div v-for="(role, index) in item.city[1]" :key="index" class="role">
             <div class="role--company">
-              <strong>{{role.company}}</strong>
+              <strong>{{ role.company }}</strong>
             </div>
             <div class="role--role">
-              <small>{{role.role}}</small>
+              <small>{{ role.role }}</small>
             </div>
             <div>
               <span class="label" v-if="role.current">Current</span>

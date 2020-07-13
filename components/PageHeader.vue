@@ -5,7 +5,6 @@
     <nav class="main-menu">
       <nuxt-link to="/">Start here</nuxt-link>
       <nuxt-link to="/work">Work</nuxt-link>
-      <!-- <nuxt-link to="/art">Art</nuxt-link> -->
       <nuxt-link to="/about">About</nuxt-link>
     </nav>
   </header>
@@ -14,7 +13,6 @@
 <script>
 export default {};
 </script>
-
 
 <style lang="scss">
 header.header {

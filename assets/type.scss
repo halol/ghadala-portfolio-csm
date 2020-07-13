@@ -1,4 +1,6 @@
-html {font-size: 18px;}
+html {
+  font-size: 18px;
+}
 body {
   font-family: $font-style-light;
   font-variant-ligatures: none;
@@ -10,13 +12,13 @@ p {
   line-height: 150%;
   margin-bottom: 1.25em;
   color: t($light-theme, "text");
-  @media (prefers-color-scheme: dark) { 
+  @media (prefers-color-scheme: dark) {
     color: t($dark-theme, "text");
   }
   &.lead {
     font-weight: 300;
-    font-size: 1.2em;
-    font-style: italic;
+    font-size: 1.5em;
+    //font-style: italic;
   }
 }
 
@@ -24,7 +26,11 @@ strong {
   font-family: $font-style-bold;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: $font-style-bold;
   margin: 2.75rem 0 1rem;
   font-weight: 600;
@@ -37,31 +43,49 @@ h1 {
   font-size: 4.209em;
 }
 
-h2 {font-size: 3.157em;}
+h2 {
+  font-size: 3.157em;
+}
 
-h3 {font-size: 2.369em;}
+h3 {
+  font-size: 2.369em;
+}
 
-h4 {font-size: 1.777em;}
+h4 {
+  font-size: 1.777em;
+}
 
-h5 {font-size: 1.333em;}
+h5 {
+  font-size: 1.333em;
+}
 
 @media screen and (max-width: $max-mobile) {
   h1 {
     margin-top: 0;
     font-size: 2.25em;
   }
-  
-  h2 {font-size: 2.157em;}
-  
-  h3 {font-size: 1.7em;}
-  
-  h4 {font-size: 1.3em;}
-  
-  h5 {font-size: 1.2em;}
+
+  h2 {
+    font-size: 2.157em;
+  }
+
+  h3 {
+    font-size: 1.7em;
+  }
+
+  h4 {
+    font-size: 1.3em;
+  }
+
+  h5 {
+    font-size: 1.2em;
+  }
 }
 
-small, .text_small {font-size: 0.75em;}
-
+small,
+.text_small {
+  font-size: 0.75em;
+}
 
 ul {
   margin-left: 1em;
@@ -73,7 +97,6 @@ ul {
     }
   }
 }
-
 
 a {
   color: t($light-theme, "link-normal");
@@ -92,22 +115,15 @@ a {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.25s ease;
-  &:hover {
-    color: t($dark-theme, "link-hover");
-  }
-  &.exact-active-link {
-    color: t($dark-theme, "link-active");
-  }
+    &:hover {
+      color: t($dark-theme, "link-hover");
+    }
+    &.exact-active-link {
+      color: t($dark-theme, "link-active");
+    }
   }
 }
-
 
 small {
   font-size: 14px;
 }
-
-
-
-
-
-

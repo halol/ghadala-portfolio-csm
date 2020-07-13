@@ -7,6 +7,11 @@
     <hr />
 
     <remote-ready></remote-ready>
+
+    <hr />
+
+    <my-button variant="dark">Buy for €500</my-button>
+    <my-button variant="light">Buy for €500</my-button>
   </div>
 </template>
 
@@ -15,13 +20,16 @@ import ShowImage from "~/components/ShowImage.vue";
 import InfoChip from "~/components/InfoChip.vue";
 import RemoteReady from "~/components/RemoteReady.vue";
 
+import MyButton from "~/components/MyButton";
+
 //let bucket = "decakckik";
 
 export default {
   components: {
     ShowImage,
     InfoChip,
-    RemoteReady
+    RemoteReady,
+    MyButton
   }
 };
 </script>
