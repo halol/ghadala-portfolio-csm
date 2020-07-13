@@ -1,15 +1,25 @@
 <template>
   <div class="artwork-tile">
     <nuxt-link :to="artLink" class="artwork-link">
-      <prismic-image :field="this.artwork.data.artwork_cover" class="artwork-thumbnail-image" />
+      <prismic-image
+        :field="this.artwork.data.artwork_cover"
+        class="artwork-thumbnail-image"
+      />
     </nuxt-link>
     <div class="artwork-meta">
       <p
         class="status-available"
         v-if="this.artwork.data.status == 'Available'"
-      >Available for €{{this.artwork.data.price}}</p>
-      <p class="status-reserved" v-else-if="this.artwork.data.status == 'Reserved'">Reserved</p>
-      <p class="status-sold" v-else>Sold for €{{this.artwork.data.price}}</p>
+      >
+        Available for €{{ this.artwork.data.price }}
+      </p>
+      <p
+        class="status-reserved"
+        v-else-if="this.artwork.data.status == 'Reserved'"
+      >
+        Reserved
+      </p>
+      <p class="status-sold" v-else>Sold for €{{ this.artwork.data.price }}</p>
     </div>
   </div>
 </template>
@@ -26,7 +36,7 @@ export default {
   },
   computed: {
     artLink: function() {
-      return `art/${this.artwork.uid}`;
+      return `/art/${this.artwork.uid}`;
     }
   },
   filters: {
