@@ -20,7 +20,7 @@
     "cloudinary-vue": "^1.1.0",
     "cross-env": "^5.2.1",
     "locomotive-scroll": "^3.5.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "lodash.template": ">=4.5.0",
     "normalize.css": "^8.0.1",
     "nuxt": "^2.12.2",
