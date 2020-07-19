@@ -3,11 +3,10 @@
     <back-button parent="work" />
     <section class="section heading">
       <p>
-        {{title}},
-        <strong>{{year}}</strong>
+        {{ title }},
+        <strong>{{ year }}</strong>
       </p>
-      <h1 class="project-title">{{description}}</h1>
-
+      <h1 class="project-title">{{ description }}</h1>
       <div class="chips" v-show="false">
         <info-chip color="primary" label="E-commmm" />
         <info-chip color="default" label="Web" />
@@ -22,11 +21,20 @@
         </p>
       </div>
     </section>
-    <section class="section gallery" v-if="images">
-      <div class="items scroll">
-        <figure class="figure" v-for="(image, index) in mockups" :key="index">
-          <img :src="parseImage(image)" alt="index" />
-        </figure>
+    <section class="gallery" v-if="images">
+      <div class="gallery-items scroll">
+        <div
+          class="gallery-item"
+          v-for="(image, index) in mockups"
+          :key="index"
+        >
+          <img
+            :src="parseImage(image)"
+            alt="index"
+            class="gallery-item-image"
+            height="600"
+          />
+        </div>
       </div>
     </section>
     <section class="section case-study" v-if="demo" v-show="false">
@@ -95,23 +103,77 @@ export default {
 };
 </script>
 <style lang="scss">
+.gallery {
+  min-width: 100%;
+  height: 69vh;
+  overflow: hidden;
+  background: t($light-theme, "mockup");
+  // height: 90vh;
+  @media screen and (max-width: $max-mobile) {
+  }
+  @media (prefers-color-scheme: dark) {
+    background: t($dark-theme, "mockup");
+  }
+}
+
+.gallery-items {
+  // SCROLL
+  height: calc(100% + 32px); // to hide the scrollbar
+  position: relative;
+  overflow: hidden;
+  overflow-x: scroll;
+  white-space: nowrap;
+  transition: all 300ms ease;
+  will-change: transform;
+  padding: 0 7em;
+  &.active {
+    cursor: grabbing;
+    transform: scale(1.025);
+  }
+}
+.gallery-item {
+  transition: all 300ms ease;
+  will-change: transform;
+  display: inline-block;
+  padding: 5em 0;
+  height: 100%;
+  // margin: 5em 7em;
+  &:not(:last-child) {
+    margin-right: 7em;
+  }
+  vertical-align: middle;
+}
+.gallery-item-image {
+  height: 100%;
+  display: block;
+}
+
+@media screen and (max-width: $max-mobile) {
+  .gallery {
+    height: 80vh;
+  }
+  .gallery-items {
+    padding: 0 48px;
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .gallery-item {
+    &:not(:last-child) {
+      margin-right: 48px;
+    }
+    width: auto;
+    //display: flex;
+  }
+  .gallery-item-image {
+    height: 100%;
+    width: auto;
+  }
+}
+
 .section {
   padding: 5em 7em;
   @media screen and (max-width: $max-mobile) {
     padding: 48px 48px;
-  }
-  &.gallery {
-    padding: 0;
-    overflow: hidden;
-    width: 100%; //OK
-    height: 100vh; //OK
-    background: t($light-theme, "mockup");
-    @media screen and (max-width: $max-mobile) {
-      padding: 0;
-    }
-    @media (prefers-color-scheme: dark) {
-      background: t($dark-theme, "mockup");
-    }
   }
 }
 
@@ -134,51 +196,6 @@ export default {
   }
 }
 
-.figcaption {
-  background: t($dark-theme, "bg");
-  color: t($dark-theme, "text");
-  border-radius: 999px;
-  padding: 0 24px;
-  height: 32px;
-  line-height: 33px;
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  bottom: 5em;
-  font-size: 12px;
-  font-family: $font-style-bold;
-  box-shadow: 0 3px 7px rgba($black, 0.05);
-}
-.items {
-  //padding: 5em 7em;
-  //padding: 3em 0;
-  display: flex;
-  position: relative;
-  //overflow: hidden;
-  overflow-x: scroll;
-  white-space: nowrap;
-  transition: all 300ms ease;
-  will-change: transform;
-  user-select: none;
-  cursor: move;
-  &.active {
-    cursor: grabbing;
-    transform: scale(1.025);
-  }
-}
-.figure {
-  padding: 6em 7em;
-  height: 100vh;
-  @media screen and (max-width: $max-mobile) {
-    padding: 48px 48px;
-  }
-  img {
-    max-height: 100%;
-    width: auto;
-    //max-width: calc(100vw - 96px);
-  }
-}
-
 .chips {
   &::selection {
     background: transparent;
@@ -192,6 +209,4 @@ export default {
 .project-title {
   margin-bottom: 0.6em;
 }
-
-// SVG
 </style>
