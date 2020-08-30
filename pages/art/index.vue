@@ -1,11 +1,7 @@
 <template>
   <div class="page-art">
     <div class="tiles">
-      <artwork-tile
-        v-for="artwork in gallery"
-        :key="artwork.id"
-        :artwork="artwork"
-      ></artwork-tile>
+      <artwork-tile v-for="artwork in gallery" :key="artwork.id" :artwork="artwork"></artwork-tile>
     </div>
   </div>
 </template>
@@ -42,11 +38,16 @@ export default {
 <style lang="scss">
 .tiles {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 64px;
   @media screen and (max-width: $max-mobile) {
     grid-template-columns: repeat(1, 1fr);
     gap: 32px;
+  }
+  .artwork-tile {
+    &:first-child {
+      //grid-column: 1 / span 2;
+    }
   }
 }
 

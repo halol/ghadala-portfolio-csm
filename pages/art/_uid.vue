@@ -3,7 +3,7 @@
     <back-button parent="art"></back-button>
 
     <div class="artwork-main-image" :style="featuredImage">
-      <img :src="mobileImage" alt="" class="mobile-image" />
+      <img :src="mobileImage" alt class="mobile-image" />
     </div>
     <template v-if="gallery.length > 1">
       <div class="artwork-gallery">
@@ -29,28 +29,23 @@
         </h1>
         <template v-if="result.medium || result.series || result.dimensions">
           <p class="artwork-meta-info">
-            <span v-if="result.series"
-              >Series of "{{ $prismic.asText(result.series) }}".</span
-            >
+            <span v-if="result.series">Series of "{{ $prismic.asText(result.series) }}".</span>
             <span v-if="result.medium">{{ result.medium }}.</span>
-            <span v-if="result.dimensions"
-              >Dimensions:
-              {{ $prismic.asText(result.dimensions) }} (W/H/D)</span
-            >
+            <span v-if="result.dimensions">
+              Dimensions:
+              {{ $prismic.asText(result.dimensions) }} (W/H/D)
+            </span>
           </p>
         </template>
 
-        <p v-if="result.description">
-          {{ $prismic.asText(result.description) }}
-        </p>
+        <p v-if="result.description">{{ $prismic.asText(result.description) }}</p>
 
         <div class="status">
-          <p class="status-available" v-if="result.status == 'Available'">
-            Available for €{{ result.price }}
-          </p>
-          <p class="status-reserved" v-else-if="result.status == 'Reserved'">
-            Reserved
-          </p>
+          <p
+            class="status-available"
+            v-if="result.status == 'Available'"
+          >Available for €{{ result.price }}</p>
+          <p class="status-reserved" v-else-if="result.status == 'Reserved'">Reserved</p>
           <p class="status-sold" v-else>Sold for €{{ result.price }}</p>
         </div>
       </div>
@@ -60,7 +55,21 @@
       <div class="main">
         <h4>Reserve {{ result.title[0].text }}</h4>
         <p class="form-price">Price: €{{ result.price }}</p>
-        <form action class="form" netlify>
+
+        <a
+          href="https://forms.gle/Wme4mzYjETTq7zLcA"
+          target="_blank"
+          class="btn-submit"
+        >Reserve this painting</a>
+        <div>
+          <small>
+            Currently all the pruchases are available for collection,
+            delivery (by myself) or shipping by post or courier in the 🇳🇱 Netherlands. For other countries
+            please state shipping information and I will provide shipping
+            estimates. You will be redirected to Google Forms.
+          </small>
+        </div>
+        <!-- <form action class="form" netlify>
           <input
             type="text"
             placeholder="Your name"
@@ -101,7 +110,7 @@
             >
           </div>
           <div><button type="submit" class="btn-submit">Reserve</button></div>
-        </form>
+        </form>-->
       </div>
     </div>
   </div>
@@ -414,6 +423,7 @@ export default {
   border: 2px solid $light;
   color: $light;
   padding: 8px 16px;
+  display: inline-block;
 }
 .form-price {
   color: $light;
