@@ -1,5 +1,18 @@
 <template>
   <div class="page-art">
+    <div class="hero">
+      <h2>A short story of my passion</h2>
+      <p>My paintings don't have any story or a specific meaning. However, I want to tease the audience and let them find their stories in my work. I usually let my brushes wander on the canvas, experiment with composition, colour and a freeform of what I do.</p>
+      <p>
+        You can support me by buying one (or more) of my paintings. Prices can be negotiated.
+        <strong>
+          For commissions please reach me out on
+          <a
+            href="https://www.instagram.com/grzesiekmarekjurek/"
+          >Instagram</a>
+        </strong>
+      </p>
+    </div>
     <div class="tiles">
       <artwork-tile v-for="artwork in gallery" :key="artwork.id" :artwork="artwork"></artwork-tile>
     </div>
